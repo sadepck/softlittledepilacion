@@ -1,0 +1,394 @@
+/* Estilos para la sección Antes y Después */
+.gallery {
+    padding: 5rem 0;
+    background-color: var(--bg-primary);
+    position: relative;
+    overflow: hidden;
+    color: var(--text-primary);
+}
+
+.before-after-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.slides-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 66.67%; /* 3:2 aspect ratio */
+    overflow: hidden;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow);
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    background-color: var(--bg-primary); /* Fondo consistente */
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.slide-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    background-color: var(--color-white); /* Fondo blanco para el contenido */
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    background-color: var(--color-white); /* Fondo blanco para la imagen */
+}
+
+.image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.slide:hover .image-container img {
+    transform: scale(1.05);
+}
+
+.label {
+    position: absolute;
+    padding: 10px 24px;
+    color: var(--color-white);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    z-index: 10;
+    border-radius: 30px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.label.before {
+    top: 20px;
+    left: 20px;
+    background: var(--color-primary);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.label.after {
+    bottom: 20px;
+    right: 20px;
+    background: var(--color-accent);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.slide h4 {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-dark);
+    color: var(--color-white);
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0;
+    z-index: 10;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Hover effects */
+.label:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.slide h4:hover {
+    background: var(--color-primary);
+    color: var(--color-dark);
+}
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.nav-btn:hover {
+    background: var(--color-white);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: var(--shadow-hover);
+}
+
+.nav-btn i {
+    color: var(--color-dark);
+    font-size: 1.2rem;
+    transition: var(--transition);
+}
+
+.nav-btn:hover i {
+    color: var(--color-primary);
+}
+
+.prev-btn {
+    left: 20px;
+}
+
+.next-btn {
+    right: 20px;
+}
+
+.indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    background: white;
+    transform: scale(1.2);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .slides-container {
+        max-width: 900px;
+    }
+}
+
+@media (max-width: 992px) {
+    .before-after-container {
+        padding: 0 20px;
+    }
+    
+    .slides-container {
+        max-width: 100%;
+        padding-bottom: 75%; /* 4:3 aspect ratio for tablets */
+    }
+    
+    .label {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+    
+    .label.before {
+        top: 15px;
+        left: 15px;
+    }
+    
+    .label.after {
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    .slide h4 {
+        font-size: 0.95rem;
+        padding: 10px 20px;
+        bottom: 15px;
+    }
+    
+    .nav-btn {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .nav-btn i {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        padding: 3rem 0;
+    }
+    
+    .slides-container {
+        height: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .slides-container {
+        padding-bottom: 100%; /* 1:1 aspect ratio for mobile */
+    }
+    
+    .nav-btn {
+        width: 38px;
+        height: 38px;
+        font-size: 0.9rem;
+    }
+    
+    .label {
+        font-size: 0.7rem;
+        padding: 4px 10px;
+        bottom: 10px;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { 
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animaciones de deslizamiento */
+@keyframes slideInRight {
+    from { 
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOutLeft {
+    from { 
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to { 
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+}
+
+@keyframes slideInLeft {
+    from { 
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOutRight {
+    from { 
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to { 
+        opacity: 0;
+        transform: translateX(50px);
+    }
+}
+
+/* Clases de animación */
+.slide-in-right {
+    animation: slideInRight 0.6s ease-in-out forwards;
+}
+
+.slide-out-left {
+    animation: slideOutLeft 0.6s ease-in-out forwards;
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.6s ease-in-out forwards;
+}
+
+.slide-out-right {
+    animation: slideOutRight 0.6s ease-in-out forwards;
+}
+
+/* Asegurar que los slides inactivos estén ocultos */
+.slide {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.slide.active {
+    display: block;
+    position: relative;
+}
+
+/* Ajustes para el tema oscuro si es necesario */
+@media (prefers-color-scheme: dark) {
+    .gallery {
+        background-color: #121212;
+    }
+    
+    .slides-container {
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+    }
+    
+    .nav-btn {
+        background-color: rgba(45, 45, 45, 0.9);
+        color: #f3e5f5;
+    }
+    
+    .nav-btn:hover {
+        background-color: #9c27b0;
+        color: white;
+    }
+}

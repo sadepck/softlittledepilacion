@@ -1,0 +1,224 @@
+/* Footer Styles */
+:root {
+    --footer-bg: #1a1a1a;
+    --footer-text: #d5d5d5;
+    --footer-link: #8e44ad; /* Your brand's purple color */
+    --footer-hover: #9b59b6; /* Slightly lighter purple for hover */
+    --footer-card-bg: linear-gradient(120deg, #8e44ad, #6c3483); /* Purple gradient */
+    --footer-card-text: #ffffff;
+}
+
+/* Scroll to Top Card */
+.scroll-top-card {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--footer-card-bg);
+    color: var(--footer-card-text);
+    padding: 1.5rem 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    transform: translateY(0);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 300px;
+}
+
+.scroll-top-card h2 {
+    margin: 0 0 1rem 0;
+    font-size: 1.5rem;
+    line-height: 1.3;
+    font-weight: 500;
+}
+
+.scroll-button {
+    display: inline-block;
+    background-color: #000;
+    color: #fff;
+    padding: 0.5rem 1.5rem;
+    border-radius: 2rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.scroll-button:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}
+
+/* Footer Styles */
+.footer {
+    position: relative;
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    padding: 5rem 0 2rem;
+    margin-top: 5rem;
+    overflow: hidden;
+}
+
+.footer-content {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    z-index: 2;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 2rem;
+    padding: 0 1.5rem;
+}
+
+.footer-col h3 {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.footer-col h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background: var(--footer-link);
+}
+
+.footer-col h4 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.footer-col p {
+    margin: 0.5rem 0;
+    line-height: 1.6;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-col ul li a {
+    color: var(--footer-text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: block;
+}
+
+.footer-col ul li a:hover {
+    color: var(--footer-link);
+    padding-left: 5px;
+}
+
+.social-links {
+    display: flex;
+    margin: 1.5rem 0;
+    gap: 1rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: #fff;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-link:hover {
+    background-color: var(--footer-link);
+    transform: translateY(-3px);
+}
+
+.copyright {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.footer-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.6) 30%,
+        rgba(0, 0, 0, 0.9) 70%,
+        rgb(0, 0, 0) 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .footer-content {
+        padding: 0 1.5rem;
+    }
+    
+    .footer-col {
+        flex: 0 0 50%;
+        margin-bottom: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-col {
+        flex: 0 0 100%;
+        text-align: center;
+        padding: 0 1rem;
+    }
+    
+    .footer-col h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    .scroll-top-card {
+        right: 1rem;
+        bottom: 1rem;
+        max-width: calc(100% - 2rem);
+    }
+}
+
+/* Animation for scroll card */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.scroll-top-card:hover {
+    animation: float 2s ease-in-out infinite;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}

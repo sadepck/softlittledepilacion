@@ -1,0 +1,167 @@
+/* Services Slider */
+.services-swiper-container {
+    position: relative;
+    width: 100%;
+    padding: 2rem 0;
+    background-color: rgba(255, 255, 255, 0.85);
+    margin: 4rem 0;
+}
+
+.services-swiper {
+    width: 100%;
+    padding-top: 3.125rem;
+}
+
+.swiper-pagination-bullet,
+.swiper-pagination-bullet-active {
+    background: var(--color-primary);
+}
+
+.swiper-pagination {
+    bottom: 1.25rem !important;
+}
+
+.swiper-slide {
+    width: 18.75rem;
+    height: 28.125rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: self-start;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.swiper-slide:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+}
+
+.swiper-slide h3 {
+    color: #fff;
+    font-family: var(--font-primary);
+    font-weight: 600;
+    font-size: 1.6rem;
+    line-height: 1.4;
+    margin-bottom: 0.625rem;
+    padding: 0 1.563rem;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.swiper-slide p {
+    color: #f0f0f0;
+    font-family: var(--font-secondary);
+    font-weight: 300;
+    padding: 0 1.563rem;
+    line-height: 1.6;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.swiper-slide .service-link {
+    display: inline-block;
+    margin: 0 1.563rem 2rem;
+    padding: 0.6em 1.8em;
+    font-size: 0.9rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    background-color: var(--color-primary);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    border: 2px solid transparent;
+}
+
+.swiper-slide .service-link:hover {
+    background-color: transparent;
+    border-color: white;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.swiper-slide--depilacion {
+    background: linear-gradient(to top, rgba(15, 23, 42, 0.9), rgba(200, 182, 200, 0.2)),
+        url('https://images.unsplash.com/photo-1595476107863-aa5cfaaec1d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center / cover;
+}
+
+.swiper-slide--cejas {
+    background: linear-gradient(to top, rgba(15, 23, 42, 0.9), rgba(200, 182, 200, 0.2)),
+        url('https://images.unsplash.com/photo-1599351431268-3ff2dbdf6f7d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center / cover;
+}
+
+.swiper-slide--pestanas {
+    background: linear-gradient(to top, rgba(15, 23, 42, 0.9), rgba(200, 182, 200, 0.2)),
+        url('https://images.unsplash.com/photo-1600334129128-685c5582fd35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center / cover;
+}
+
+.swiper-slide--facial {
+    background: linear-gradient(to top, rgba(15, 23, 42, 0.9), rgba(200, 182, 200, 0.2)),
+        url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center / cover;
+}
+
+.swiper-slide--corporal {
+    background: linear-gradient(to top, rgba(15, 23, 42, 0.9), rgba(200, 182, 200, 0.2)),
+        url('https://images.unsplash.com/photo-1534258936925-c58bed479fcb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1631&q=80') no-repeat center center / cover;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .services-swiper-container {
+        padding: 1rem 0;
+        margin: 2rem 0;
+    }
+    
+    .swiper-slide {
+        height: 25rem;
+    }
+    
+    .swiper-slide h3 {
+        font-size: 1.4rem;
+    }
+    
+    .swiper-slide p {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .swiper-slide {
+        height: 22rem;
+    }
+    
+    .swiper-slide h3 {
+        font-size: 1.3rem;
+        padding: 0 1rem;
+    }
+    
+    .swiper-slide p {
+        padding: 0 1rem;
+        font-size: 0.8rem;
+    }
+    
+    .swiper-slide .service-link {
+        margin: 0 1rem 1.5rem;
+        font-size: 0.8rem;
+        padding: 0.5em 1.5em;
+    }
+}
+
+/* Animation for slide content */
+.swiper-slide div {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.swiper-slide-active div {
+    opacity: 1;
+    transform: translateY(0);
+}
