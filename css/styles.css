@@ -3244,3 +3244,219 @@ section {
 .footer-col i {
     opacity: 1 !important;
 }
+/* ==========================================================================
+   #RESPONSIVE STYLES
+   ========================================================================== */
+
+/* Ajustes generales para móviles */
+@media (max-width: 767px) {
+    /* Ajustes de tipografía */
+    html {
+        font-size: 14px;
+    }
+    
+    /* Header y navegación */
+    .header {
+        padding: 15px 0;
+    }
+    
+    .logo-img {
+        max-width: 180px;
+    }
+    
+    .nav-links {
+        display: none;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #ffffff;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .nav-links li {
+        margin: 10px 0;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    /* Hero Section */
+    .hero {
+        padding: 120px 0 60px;
+        text-align: center;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+    
+    /* Sección de Servicios */
+    .services {
+        padding: 60px 0;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    /* Testimonios */
+    .testimonials {
+        padding: 60px 0;
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Galería */
+    .gallery {
+        padding: 60px 0;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Footer */
+    .footer {
+        padding: 60px 0 0;
+        text-align: center;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .footer-col {
+        padding: 0;
+    }
+    
+    .footer-description {
+        margin: 15px auto 25px;
+        text-align: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    .footer-col2 ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .footer-col2 li {
+        margin: 0;
+    }
+    
+    .footer-col2 a {
+        padding: 5px 15px !important;
+        background: rgba(0, 0, 0, 0.03);
+        border-radius: 20px;
+    }
+    
+    /* Botón de WhatsApp flotante */
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+/* Ajustes para tablets */
+@media (min-width: 768px) and (max-width: 991px) {
+    .services-grid,
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-col:last-child {
+        grid-column: 1 / -1;
+        margin-top: 30px;
+    }
+}
+
+/* Ajustes para pantallas pequeñas de móviles */
+@media (max-width: 480px) {
+    .hero {
+        padding: 100px 0 50px;
+    }
+    
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .footer-col2 ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .footer-col2 a {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Ajustes para pantallas muy pequeñas */
+@media (max-width: 360px) {
+    html {
+        font-size: 13px;
+    }
+    
+    .logo-img {
+        max-width: 150px;
+    }
+    
+    .hero-title {
+        font-size: 1.6rem;
+    }
+    
+    .section-header h2 {
+        font-size: 1.6rem;
+    }
+}
