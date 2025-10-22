@@ -3206,3 +3206,41 @@ section {
         margin: 15px auto 25px;
     }
 }
+/* Estilos para los enlaces rápidos del footer */
+.footer-col2 h4 {
+    color: #9F2B68 !important; /* Color rosa oscuro para el título */
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.footer-col2 ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.footer-col2 ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col2 ul li a {
+    color: #333333 !important; /* Color de texto oscuro */
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    display: block;
+    padding: 5px 0;
+    opacity: 1 !important; /* Asegurar que no haya transparencia */
+}
+
+.footer-col2 ul li a:hover {
+    color: #9F2B68 !important; /* Color rosa oscuro al hacer hover */
+    padding-left: 5px;
+}
+
+/* Asegurar que no haya transparencia en los íconos */
+.footer-col i {
+    opacity: 1 !important;
+}
