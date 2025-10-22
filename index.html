@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soft Little Depilación - Depilación Profesional</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    
+    <!-- Fuentes de Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header y Navegación -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">Soft Little Depilación</a>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#galeria">Galería</a></li>
+                    <li><a href="#planes">Planes</a></li>
+                    <li><a href="#testimonios">Testimonios</a></li>
+                    <li><a href="#contacto" class="btn btn-primary">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero" style="background: linear-gradient(135deg, rgba(253, 242, 248, 0.9), rgba(255, 255, 255, 0.9)), url('https://images.unsplash.com/photo-1595475884564-912f3923260e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;">
+        <div class="container">
+            <div class="hero-content" data-aos="fade-up">
+                <h1>Soft Little Depilación</h1>
+                <p class="subtitle">Técnicas profesionales de depilación para una piel suave y radiante</p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/569XXXXXXXX?text=Hola%20Soft%20Little%20Depilación%2C%20me%20interesa%20saber%20más%20sobre%20sus%20servicios" class="btn btn-primary" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Reserva tu cita
+                    </a>
+                    <a href="#servicios" class="btn btn-outline">Conoce más</a>
+                </div>
+            </div>
+            <div class="hero-image" data-aos="fade-left">
+                <img src="images/istockphoto-1460105832-612x612.jpg" alt="Servicios de depilación profesional">
+            </div>
+        </div>
+        <div class="hero-wave">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512,64,583,67.3c66.2,3,128.46-15.7,182.83-33.26,33.14-10.8,68.1-21.7,103.13-29.08,18.94-3.97,38.84-6.1,58.7-6.1V0Z" opacity=".25" fill="#FDF2F8"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,141.56,70.34,28.27,47.49,9.3,118.3-30,152.8-24.7,21.66-56.2,34.58-88.5,37.38-61.81,5.31-116.31-21.75-145.24-58.48-32.8-41.75-38.9-97.5-38.9-97.5s-6.1-55.75-38.9-97.5C281.31,2.13,226.81-24.93,165,19.56,103.19,64.05,81.55,129.48,81.55,129.48s-21.74-65.43-83.5-109.9Z" opacity=".5" fill="#FDF2F8"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="#FDF2F8"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Sección de Servicios -->
+    <section id="servicios" class="services">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Nuestros Servicios</h2>
+                <p>Descubre nuestros tratamientos profesionales</p>
+            </div>
+            <div class="services-grid">
+                <!-- Servicio 1 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Depilación Definitiva">
+                    </div>
+                    <h3>Depilación Definitiva</h3>
+                    <p>Resultados suaves y duraderos con tecnología de punta para todo tipo de piel.</p>
+                </div>
+                
+                <!-- Servicio 2 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <img src="https://images.unsplash.com/photo-1605980789822-58864b3f4af6?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Perfilado de Cejas">
+                    </div>
+                    <h3>Perfilado de Cejas</h3>
+                    <p>Diseño personalizado para resaltar la mirada según la forma de tu rostro.</p>
+                </div>
+                
+                <!-- Servicio 3 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <img src="https://images.unsplash.com/photo-1599383572298-9e0f84dc8fb2?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Lifting de Pestañas">
+                    </div>
+                    <h3>Lifting de Pestañas</h3>
+                    <p>Pestañas más largas y voluminosas sin necesidad de extensiones.</p>
+                </div>
+                
+                <!-- Servicio 4 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon">
+                        <img src="https://images.unsplash.com/photo-1604187351574-c75ca79f5807?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Brow Lamination">
+                    </div>
+                    <h3>Brow Lamination</h3>
+                    <p>Diseño y fijación de cejas para un look perfecto que dura semanas.</p>
+                </div>
+                
+                <!-- Servicio 5 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-icon">
+                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Limpieza Facial">
+                    </div>
+                    <h3>Limpieza Facial</h3>
+                    <p>Tratamientos faciales personalizados para una piel radiante y saludable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Galería -->
+    <section id="galeria" class="gallery">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Antes y Después</h2>
+                <p>Resultados reales de nuestros tratamientos</p>
+            </div>
+            <div class="gallery-slider">
+                <!-- Imagen 1 -->
+                <div class="gallery-slide">
+                    <div class="gallery-item">
+                        <div class="gallery-image-container">
+                            <div class="gallery-before">
+                                <img src="images/gr1.jpeg" alt="Antes - Depilación de piernas">
+                                <span class="gallery-label">Antes</span>
+                            </div>
+                            <div class="gallery-after">
+                                <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Después - Depilación de piernas">
+                                <span class="gallery-label">Después</span>
+                            </div>
+                        </div>
+                        <h4>Depilación de piernas</h4>
+                    </div>
+                </div>
+                
+                <!-- Imagen 2 -->
+                <div class="gallery-slide">
+                    <div class="gallery-item">
+                        <div class="gallery-image-container">
+                            <div class="gallery-before">
+                                <img src="https://images.unsplash.com/photo-1599351431407-3b1c0a55a08f?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Antes - Perfilado de cejas">
+                                <span class="gallery-label">Antes</span>
+                            </div>
+                            <div class="gallery-after">
+                                <img src="https://images.unsplash.com/photo-1595475884564-912f3923260e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Después - Perfilado de cejas">
+                                <span class="gallery-label">Después</span>
+                            </div>
+                        </div>
+                        <h4>Perfilado de cejas</h4>
+                    </div>
+                </div>
+                
+                <!-- Imagen 3 -->
+                <div class="gallery-slide">
+                    <div class="gallery-item">
+                        <div class="gallery-image-container">
+                            <div class="gallery-before">
+                                <img src="https://images.unsplash.com/photo-1599382948636-072287e4d9a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Antes - Lifting de pestañas">
+                                <span class="gallery-label">Antes</span>
+                            </div>
+                            <div class="gallery-after">
+                                <img src="https://images.unsplash.com/photo-1599383572298-9e0f84dc8fb2?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Después - Lifting de pestañas">
+                                <span class="gallery-label">Después</span>
+                            </div>
+                        </div>
+                        <h4>Lifting de pestañas</h4>
+                    </div>
+                </div>
+                
+                <!-- Imagen 4 -->
+                <div class="gallery-slide">
+                    <div class="gallery-item">
+                        <div class="gallery-image-container">
+                            <div class="gallery-before">
+                                <img src="https://images.unsplash.com/photo-1604187351574-c75ca79f5807?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Antes - Brow Lamination">
+                                <span class="gallery-label">Antes</span>
+                            </div>
+                            <div class="gallery-after">
+                                <img src="https://images.unsplash.com/photo-1605980789822-58864b3f4af6?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Después - Brow Lamination">
+                                <span class="gallery-label">Después</span>
+                            </div>
+                        </div>
+                        <h4>Brow Lamination</h4>
+                    </div>
+                </div>
+                
+                <!-- Imagen 5 -->
+                <div class="gallery-slide">
+                    <div class="gallery-item">
+                        <div class="gallery-image-container">
+                            <div class="gallery-before">
+                                <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Antes - Limpieza facial">
+                                <span class="gallery-label">Antes</span>
+                            </div>
+                            <div class="gallery-after">
+                                <img src="https://images.unsplash.com/photo-1544164350-af3e8b3a3c1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Después - Limpieza facial">
+                                <span class="gallery-label">Después</span>
+                            </div>
+                        </div>
+                        <h4>Limpieza facial</h4>
+                    </div>
+                </div>
+                
+                <!-- Imagen 6 -->
+                <div class="gallery-slide">
+                    <div class="gallery-item">
+                        <div class="gallery-image-container">
+                            <div class="gallery-before">
+                                <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Antes - Depilación de axilas">
+                                <span class="gallery-label">Antes</span>
+                            </div>
+                            <div class="gallery-after">
+                                <img src="https://images.unsplash.com/photo-1600334128947-1fb1a2b42b9f?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Después - Depilación de axilas">
+                                <span class="gallery-label">Después</span>
+                            </div>
+                        </div>
+                        <h4>Depilación de axilas</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Planes -->
+    <section id="planes" class="pricing">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Nuestros Planes</h2>
+                <p>Elige el plan que mejor se adapte a ti</p>
+            </div>
+            <div class="pricing-grid">
+                <!-- Plan Básico -->
+                <div class="pricing-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="pricing-header">
+                        <h3>Básico</h3>
+                        <div class="price">
+                            <span class="amount">$29.990</span>
+                            <span class="period">por sesión</span>
+                        </div>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li>1 Zona pequeña</li>
+                            <li>Duración: 30 min</li>
+                            <li>Asesoría personalizada</li>
+                            <li>1 Sesión</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-footer">
+                        <a href="#contacto" class="btn btn-outline">Consultar</a>
+                    </div>
+                </div>
+                
+                <!-- Plan Estándar -->
+                <div class="pricing-card featured" data-aos="fade-up" data-aos-delay="200">
+                    <div class="pricing-badge">Popular</div>
+                    <div class="pricing-header">
+                        <h3>Estándar</h3>
+                        <div class="price">
+                            <span class="amount">$79.990</span>
+                            <span class="period">3 sesiones</span>
+                        </div>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li>Hasta 2 zonas</li>
+                            <li>Duración: 1 hora</li>
+                            <li>Asesoría personalizada</li>
+                            <li>3 Sesiones</li>
+                            <li>10% de descuento</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-footer">
+                        <a href="#contacto" class="btn btn-primary">Reservar ahora</a>
+                    </div>
+                </div>
+                
+                <!-- Plan Premium -->
+                <div class="pricing-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="pricing-header">
+                        <h3>Premium</h3>
+                        <div class="price">
+                            <span class="amount">$149.990</span>
+                            <span class="period">6 sesiones</span>
+                        </div>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li>Zonas ilimitadas</li>
+                            <li>Duración: 1.5 horas</li>
+                            <li>Asesoría personalizada</li>
+                            <li>6 Sesiones</li>
+                            <li>15% de descuento</li>
+                            <li>Regalo sorpresa</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-footer">
+                        <a href="#contacto" class="btn btn-outline">Consultar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Testimonios -->
+    <section id="testimonios" class="testimonials">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Lo que dicen nuestros clientes</h2>
+                <p>Experiencias reales de personas como tú</p>
+            </div>
+            <div class="testimonials-slider">
+                <!-- Testimonio 1 -->
+                <div class="testimonial-slide">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">★★★★★</div>
+                        <p class="testimonial-content">"Excelente servicio de depilación. Muy profesional y con excelentes resultados. ¡Mi piel nunca se había sentido tan suave!"</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">
+                                <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="María González">
+                            </div>
+                            <div class="testimonial-info">
+                                <h4>María González</h4>
+                                <span>Cliente frecuente</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonio 2 -->
+                <div class="testimonial-slide">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">★★★★★</div>
+                        <p class="testimonial-content">"El perfilado de cejas quedó perfecto. Me encantó la atención y los resultados. ¡Volveré pronto!"</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">
+                                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Carolina Martínez">
+                            </div>
+                            <div class="testimonial-info">
+                                <h4>Carolina Martínez</h4>
+                                <span>Nueva cliente</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonio 3 -->
+                <div class="testimonial-slide">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">★★★★★</div>
+                        <p class="testimonial-content">"El lifting de pestañas es increíble. Me ahorro mucho tiempo en el maquillaje y se ven naturales."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">
+                                <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Andrea Rojas">
+                            </div>
+                            <div class="testimonial-info">
+                                <h4>Andrea Rojas</h4>
+                                <span>Cliente desde 2023</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonio 4 -->
+                <div class="testimonial-slide">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">★★★★☆</div>
+                        <p class="testimonial-content">"La mejor experiencia en depilación que he tenido. Muy profesional y con excelentes resultados."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">
+                                <img src="https://randomuser.me/api/portraits/women/54.jpg" alt="Daniela Sánchez">
+                            </div>
+                            <div class="testimonial-info">
+                                <h4>Daniela Sánchez</h4>
+                                <span>Cliente</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info" data-aos="fade-right">
+                    <h2>Contáctanos</h2>
+                    <p>Estamos aquí para responder a todas tus preguntas y ayudarte a programar tu próxima cita.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Ubicación</h4>
+                                <p>Rudecindo Ortega, Salida Norte, Jardines de la Frontera, Parcela 33, Providencia</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <h4>Teléfono</h4>
+                                <p>+56 9 XXXX XXXX</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="far fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>contacto@softlittledepilacion.cl</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="far fa-clock"></i>
+                            <div>
+                                <h4>Horario</h4>
+                                <p>Lun - Vie: 9:00 - 20:00<br>Sáb: 10:00 - 18:00<br>Dom: Cerrado</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/569XXXXXXXX" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form" data-aos="fade-left">
+                    <h3>Envíanos un mensaje</h3>
+                    <form id="contactForm" netlify>
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Nombre completo" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" placeholder="Teléfono" required>
+                        </div>
+                        <div class="form-group">
+                            <select id="service" name="service" required>
+                                <option value="" disabled selected>Selecciona un servicio</option>
+                                <option value="depilacion">Depilación Definitiva</option>
+                                <option value="cejas">Perfilado de Cejas</option>
+                                <option value="pestanas">Lifting de Pestañas</option>
+                                <option value="brow-lamination">Brow Lamination</option>
+                                <option value="facial">Limpieza Facial</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" placeholder="Tu mensaje" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block">Enviar mensaje</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa -->
+    <div class="map-container">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.1234567890123!2d-70.12345678901234!3d-33.12345678901234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDA3JzI0LjQiUyA3MMKwMDcnMzAuOCJX!5e0!3m2!1sen!2scl!4v1234567890123!5m2!1sen!2scl" 
+            width="100%" 
+            height="450" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+        </iframe>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Soft Little Depilación</h3>
+                    <p>Profesionales en depilación y belleza</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Enlaces rápidos</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#galeria">Galería</a></li>
+                        <li><a href="#planes">Planes</a></li>
+                        <li><a href="#testimonios">Testimonios</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Rudecindo Ortega, Salida Norte, Jardines de la Frontera, Parcela 33, Providencia</p>
+                    <p><i class="fas fa-phone-alt"></i> +56 9 XXXX XXXX</p>
+                    <p><i class="far fa-envelope"></i> contacto@softlittledepilacion.cl</p>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Suscríbete</h4>
+                    <p>Recibe ofertas exclusivas y consejos de belleza.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Tu correo electrónico">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2025 Soft Little Depilación. Todos los derechos reservados.</p>
+                </div>
+                <div class="footer-social">
+                    <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/569XXXXXXXX" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón de WhatsApp flotante -->
+    <a href="https://wa.me/569XXXXXXXX" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Botón de volver arriba -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Scripts -->
+    <!-- jQuery (required by Slick) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- Slick Carousel (debe ir después de jQuery) -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+    
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom Scripts (debe ir después de todas las dependencias) -->
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+    
+    <!-- Initialize AOS -->
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+</body>
+</html>
