@@ -12,69 +12,9 @@ if (typeof jQuery === 'undefined') {
     console.log('jQuery está cargado correctamente');
 }
 
-// Navegación suave mejorada (moved to global scope)
-function initSmoothScroll() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const targetId = this.getAttribute('href');
-            if (targetId === '#' || targetId === '#!') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                e.preventDefault();
-                
-                window.scrollTo({
-                    top: targetElement.offsetTop - CONFIG.scrollOffset,
-                    behavior: 'smooth'
-                });
-                
-                // Cerrar menú móvil si está abierto
-                const menuToggle = document.querySelector('.menu-toggle');
-                if (menuToggle && menuToggle.classList.contains('active')) {
-                    toggleMobileMenu();
-                }
-                
-                // Actualizar URL sin recargar la página
-                history.pushState(null, null, targetId);
-            }
-        });
-    });
-}
-
-// Función para inicializar componentes
-function initComponents() {
-    const $ = jQuery; // Asegurar que $ esté definido
-    
-    // Menú móvil
-    const menuToggle = document.querySelector('.menu-toggle');
-    if (menuToggle) {
-        menuToggle.addEventListener('click', toggleMobileMenu);
-    }
-    
-    // Inicializar tooltips
-    if (typeof $.fn.tooltip === 'function') {
-        $('[data-toggle="tooltip"]').tooltip();
-    }
-    
-    // Inicializar carruseles
-    initSliders();
-    
-    // Inicializar galería (manejada por before-after-slider.js)
-    // No es necesario inicializar aquí si ya se maneja en su propio archivo
-    
-    // Inicializar testimonios (manejado por Slick en initSliders)
-    
-    // Inicializar carga perezosa de imágenes
-    initLazyLoading();
-    
-    // Inicializar animaciones al hacer scroll
-    initScrollAnimations();
-}
-
 // Inicialización cuando el DOM esté completamente cargado
 document.addEventListener('DOMContentLoaded', function() {
     const $ = jQuery; // Asegurar que $ esté definido
-    
     // Inicializar AOS (Animate On Scroll)
     if (typeof AOS !== 'undefined') {
         AOS.init({
@@ -86,8 +26,67 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Navegación suave mejorada
+    function initSmoothScroll() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#' || targetId === '#!') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - CONFIG.scrollOffset,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Cerrar menú móvil si está abierto
+                    const menuToggle = document.querySelector('.menu-toggle');
+                    if (menuToggle && menuToggle.classList.contains('active')) {
+                        toggleMobileMenu();
+                    }
+                    
+                    // Actualizar URL sin recargar la página
+                    history.pushState(null, null, targetId);
+                }
+            });
+        });
+    }
+    
     // Inicializar componentes
-    initComponents();
+    function initComponents() {
+        // Menú móvil
+        const menuToggle = document.querySelector('.menu-toggle');
+        if (menuToggle) {
+            menuToggle.addEventListener('click', toggleMobileMenu);
+        }
+        
+        // Inicializar tooltips
+        if (typeof $.fn.tooltip === 'function') {
+            $('[data-toggle="tooltip"]').tooltip();
+        }
+        
+        // Inicializar carruseles
+        initSliders();
+        
+        // Inicializar galería
+        if (document.querySelector('.gallery-slider')) {
+            initGallery();
+        }
+        
+        // Inicializar testimonios
+        if (document.querySelector('.testimonials-slider')) {
+            initTestimonials();
+        }
+        
+        // Inicializar carga perezosa de imágenes
+        initLazyLoading();
+        
+        // Inicializar animaciones al hacer scroll
+        initScrollAnimations();
+    }
     
     // Cambiar header al hacer scroll
     const header = document.querySelector('.header');
@@ -159,78 +158,95 @@ function toggleMobileMenu() {
 
 // Función para inicializar los sliders
 function initSliders() {
-    // Inicializar slider de galería
+    // Verificar que el elemento exista y no esté ya inicializado
     const $gallerySlider = $('.gallery-slider');
-    if ($gallerySlider.length > 0 && !$gallerySlider.hasClass('slick-initialized')) {
-        $gallerySlider.slick({
-            dots: true,
-            infinite: true,
-            speed: 600, // Aumentado para transición más suave
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 5000, // Aumentado para dar más tiempo de ver cada imagen
-            pauseOnHover: true, // Pausar al pasar el mouse
-            pauseOnFocus: true, // Pausar al hacer foco
-            pauseOnDotsHover: true, // Pausar al pasar el mouse sobre los puntos
-            cssEase: 'cubic-bezier(0.4, 0, 0.2, 1)', // Transición más suave
-            swipeToSlide: true, // Deslizar para avanzar
-            touchThreshold: 10, // Más sensible al tactil
-            touchMove: true, // Permitir arrastrar
-            waitForAnimate: false, // Mejor rendimiento
-            arrows: true, // Mostrar flechas de navegación
-            prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-chevron-left"></i></button>',
-            nextArrow: '<button type="button" class="slick-next"><i class="fas fa-chevron-right"></i></button>',
-            responsive: [
-                {
-                    breakpoint: 1200,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 1,
-                        dots: true
-                    }
-                },
-                {
-                    breakpoint: 992,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 1,
-                        dots: true
-                    }
-                },
-                {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                }
-            ]
-        });
+    if ($gallerySlider.length === 0) {
+        console.warn('No se encontró el elemento .gallery-slider');
+        return;
+    }
+    
+    if ($gallerySlider.hasClass('slick-initialized')) {
+        console.log('El slider de galería ya está inicializado');
+        return;
     }
 
-    // Inicializar slider de testimonios si existe
-    const $testimonialsSlider = $('.testimonials-slider');
-    if ($testimonialsSlider.length > 0 && !$testimonialsSlider.hasClass('slick-initialized')) {
-        $testimonialsSlider.slick({
-            dots: true,
-            infinite: true,
-            speed: 500,
-            slidesToShow: 2,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 5000,
-            responsive: [
-                {
-                    breakpoint: 992,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
+    // Slider de galería
+    $gallerySlider.slick({
+        dots: true,
+        infinite: true,
+        speed: 600, // Aumentado para transición más suave
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 5000, // Aumentado para dar más tiempo de ver cada imagen
+        pauseOnHover: true, // Pausar al pasar el mouse
+        pauseOnFocus: true, // Pausar al hacer foco
+        pauseOnDotsHover: true, // Pausar al pasar el mouse sobre los puntos
+        cssEase: 'cubic-bezier(0.4, 0, 0.2, 1)', // Transición más suave
+        swipeToSlide: true, // Deslizar para avanzar
+        touchThreshold: 10, // Más sensible al tactil
+        touchMove: true, // Permitir arrastrar
+        waitForAnimate: false, // Mejor rendimiento
+        arrows: true, // Mostrar flechas de navegación
+        prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-chevron-left"></i></button>',
+        nextArrow: '<button type="button" class="slick-next"><i class="fas fa-chevron-right"></i></button>',
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    dots: true
                 }
-            ]
-        });
+            },
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    });
+    
+        // Slider de testimonios
+    const $testimonialsSlider = $('.testimonials-slider');
+    if ($testimonialsSlider.length === 0) {
+        console.warn('No se encontró el elemento .testimonials-slider');
+        return;
     }
+    
+    if ($testimonialsSlider.hasClass('slick-initialized')) {
+        console.log('El slider de testimonios ya está inicializado');
+        return;
+    }
+    
+    $testimonialsSlider.slick({
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        responsive: [
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    });
 }
 
 // Función para inicializar la galería
