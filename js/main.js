@@ -1,46 +1,91 @@
-// Asegurarse de que jQuery esté listo
-if (typeof jQuery == 'undefined') {
+// Configuración global
+const CONFIG = {
+    scrollOffset: 80,
+    animationDuration: 800,
+    mobileBreakpoint: 768
+};
+
+// Verificar si jQuery está cargado
+if (typeof jQuery === 'undefined') {
     console.error('jQuery no está cargado correctamente');
 } else {
     console.log('jQuery está cargado correctamente');
 }
 
 // Inicialización cuando el DOM esté completamente cargado
-jQuery(document).ready(function($) {
-    AOS.init({
-        duration: 800,
-        easing: 'ease-in-out',
-        once: true,
-        mirror: false
-    });
-
-    // Navegación suave para enlaces internos
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-                
-                // Cerrar menú móvil si está abierto
-                if (document.querySelector('.menu-toggle').classList.contains('active')) {
-                    toggleMobileMenu();
-                }
-            }
+document.addEventListener('DOMContentLoaded', function() {
+    const $ = jQuery; // Asegurar que $ esté definido
+    // Inicializar AOS (Animate On Scroll)
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: CONFIG.animationDuration,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false,
+            offset: 100
         });
-    });
+    }
+
+    // Navegación suave mejorada
+    function initSmoothScroll() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#' || targetId === '#!') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - CONFIG.scrollOffset,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Cerrar menú móvil si está abierto
+                    const menuToggle = document.querySelector('.menu-toggle');
+                    if (menuToggle && menuToggle.classList.contains('active')) {
+                        toggleMobileMenu();
+                    }
+                    
+                    // Actualizar URL sin recargar la página
+                    history.pushState(null, null, targetId);
+                }
+            });
+        });
+    }
     
-    // Menú móvil
-    const menuToggle = document.querySelector('.menu-toggle');
-    if (menuToggle) {
-        menuToggle.addEventListener('click', toggleMobileMenu);
+    // Inicializar componentes
+    function initComponents() {
+        // Menú móvil
+        const menuToggle = document.querySelector('.menu-toggle');
+        if (menuToggle) {
+            menuToggle.addEventListener('click', toggleMobileMenu);
+        }
+        
+        // Inicializar tooltips
+        if (typeof $.fn.tooltip === 'function') {
+            $('[data-toggle="tooltip"]').tooltip();
+        }
+        
+        // Inicializar carruseles
+        initSliders();
+        
+        // Inicializar galería
+        if (document.querySelector('.gallery-slider')) {
+            initGallery();
+        }
+        
+        // Inicializar testimonios
+        if (document.querySelector('.testimonials-slider')) {
+            initTestimonials();
+        }
+        
+        // Inicializar carga perezosa de imágenes
+        initLazyLoading();
+        
+        // Inicializar animaciones al hacer scroll
+        initScrollAnimations();
     }
     
     // Cambiar header al hacer scroll
@@ -56,60 +101,77 @@ jQuery(document).ready(function($) {
             // Mostrar/ocultar botón de volver arriba
             const backToTop = document.querySelector('.back-to-top');
             if (backToTop) {
-                if (window.scrollY > 300) {
-                    backToTop.classList.add('active');
-                } else {
-                    backToTop.classList.remove('active');
-                }
+                backToTop.classList.toggle('active', window.scrollY > 300);
             }
         });
     }
     
-    // Inicializar sliders
-    initSliders();
-    
-    // Inicializar galería
-    initGallery();
-    
-    // Inicializar testimonios
-    initTestimonials();
-
-    // Forzar la actualización de Slick después de que todo esté cargado
+    // Verificar si Slick está cargado antes de inicializar
     if (typeof $.fn.slick === 'function') {
         console.log('Slick está cargado correctamente');
-        // Destruir el carrusel si ya existe
-        if ($('.gallery-slider').hasClass('slick-initialized')) {
-            $('.gallery-slider').slick('unslick');
+        
+        // Inicializar galería primero (si existe)
+        if (document.querySelector('.gallery-slider')) {
+            initGallery();
+            initSliders();
         }
-        // Inicializar el carrusel
-        initSliders();
+        
+        // Inicializar testimonios (si existen)
+        if (document.querySelector('.testimonials-slider')) {
+            initTestimonials();
+        }
     } else {
         console.error('Slick no está cargado correctamente');
     }
 });
 
-// Función para alternar el menú móvil
+/**
+ * Alternar menú móvil
+ */
 function toggleMobileMenu() {
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
     
-    menuToggle.classList.toggle('active');
-    navLinks.classList.toggle('active');
-    
-    // Agregar o quitar clase al body para evitar el scroll cuando el menú está abierto
-    document.body.classList.toggle('menu-open');
+    if (menuToggle && navLinks) {
+        const isOpening = !menuToggle.classList.contains('active');
+        
+        menuToggle.classList.toggle('active');
+        navLinks.classList.toggle('active');
+        
+        // Bloquear scroll cuando el menú está abierto
+        if (isOpening) {
+            document.body.style.overflow = 'hidden';
+            document.documentElement.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+            document.documentElement.style.overflow = '';
+        }
+        
+        // Agregar clase al body cuando el menú está abierto
+        if (isOpening) {
+            document.body.classList.add('menu-open');
+        } else {
+            document.body.classList.remove('menu-open');
+        }
+    }
 }
 
 // Función para inicializar los sliders
 function initSliders() {
-    // Verificar que el elemento exista
-    if ($('.gallery-slider').length === 0) {
-        console.error('No se encontró el elemento .gallery-slider');
+    // Verificar que el elemento exista y no esté ya inicializado
+    const $gallerySlider = $('.gallery-slider');
+    if ($gallerySlider.length === 0) {
+        console.warn('No se encontró el elemento .gallery-slider');
+        return;
+    }
+    
+    if ($gallerySlider.hasClass('slick-initialized')) {
+        console.log('El slider de galería ya está inicializado');
         return;
     }
 
     // Slider de galería
-    $('.gallery-slider').slick({
+    $gallerySlider.slick({
         dots: true,
         infinite: true,
         speed: 600, // Aumentado para transición más suave
@@ -155,8 +217,19 @@ function initSliders() {
         ]
     });
     
-    // Slider de testimonios
-    $('.testimonials-slider').slick({
+        // Slider de testimonios
+    const $testimonialsSlider = $('.testimonials-slider');
+    if ($testimonialsSlider.length === 0) {
+        console.warn('No se encontró el elemento .testimonials-slider');
+        return;
+    }
+    
+    if ($testimonialsSlider.hasClass('slick-initialized')) {
+        console.log('El slider de testimonios ya está inicializado');
+        return;
+    }
+    
+    $testimonialsSlider.slick({
         dots: true,
         infinite: true,
         speed: 500,
@@ -178,14 +251,28 @@ function initSliders() {
 
 // Función para inicializar la galería
 function initGallery() {
-    // Aquí podrías cargar dinámicamente las imágenes de la galería
+    // Usando las imágenes disponibles
     const galleryImages = [
-        { before: 'images/before-1.jpg', after: 'images/after-1.jpg', title: 'Depilación de piernas' },
-        { before: 'images/before-2.jpg', after: 'images/after-2.jpg', title: 'Perfilado de cejas' },
-        { before: 'images/before-3.jpg', after: 'images/after-3.jpg', title: 'Lifting de pestañas' },
-        { before: 'images/before-4.jpg', after: 'images/after-4.jpg', title: 'Brow Lamination' },
-        { before: 'images/before-5.jpg', after: 'images/after-5.jpg', title: 'Limpieza facial' },
-        { before: 'images/before-6.jpg', after: 'images/after-6.jpg', title: 'Depilación de axilas' }
+        { 
+            before: 'images/descarga.jpg', 
+            after: 'images/descarga (1).jpg', 
+            title: 'Depilación profesional' 
+        },
+        { 
+            before: 'images/CEJA1.jpg', 
+            after: 'images/images.jpg', 
+            title: 'Perfilado de cejas' 
+        },
+        { 
+            before: 'images/lifting-pestanas-quito-ecuador-alaska-1024x1024.webp', 
+            after: 'images/images (1).jpg', 
+            title: 'Lifting de pestañas' 
+        },
+        { 
+            before: 'images/gr1.jpeg', 
+            after: 'images/istockphoto-1460105832-612x612.jpg', 
+            title: 'Belleza y cuidado' 
+        }
     ];
     
     const gallerySlider = document.querySelector('.gallery-slider');
@@ -220,35 +307,31 @@ function initGallery() {
 
 // Función para inicializar los testimonios
 function initTestimonials() {
-    // Aquí podrías cargar dinámicamente los testimonios
+    // Datos de ejemplo para los testimonios (sin imágenes para evitar errores 404)
     const testimonials = [
         {
-            name: 'María González',
+            name: 'María G.',
             role: 'Cliente frecuente',
-            content: 'Excelente servicio de depilación. Muy profesional y con excelentes resultados. ¡Mi piel nunca se había sentido tan suave!',
-            rating: 5,
-            image: 'images/testimonial-1.jpg'
+            content: 'Excelente servicio de depilación. Muy profesional y el lugar es muy limpio. ¡Altamente recomendado!',
+            image: '' // Sin imagen para evitar error 404
         },
         {
-            name: 'Carolina Martínez',
-            role: 'Nueva cliente',
-            content: 'El perfilado de cejas quedó perfecto. Me encantó la atención y los resultados. ¡Volveré pronto!',
-            rating: 5,
-            image: 'images/testimonial-2.jpg'
+            name: 'Carlos M.',
+            role: 'Nuevo cliente',
+            content: 'Quedé impresionado con los resultados. La atención es personalizada y los precios son justos.',
+            image: '' // Sin imagen para evitar error 404
         },
         {
-            name: 'Andrea Rojas',
-            role: 'Cliente desde 2023',
-            content: 'El lifting de pestañas es increíble. Me ahorro mucho tiempo en el maquillaje y se ven naturales.',
-            rating: 5,
-            image: 'images/testimonial-3.jpg'
+            name: 'Ana L.',
+            role: 'Cliente desde 2020',
+            content: 'El mejor lugar para depilación que he probado. No vuelvo a ir a otro sitio. ¡Increíble!',
+            image: '' // Sin imagen para evitar error 404
         },
         {
-            name: 'Daniela Sánchez',
-            role: 'Cliente',
-            content: 'La mejor experiencia en depilación que he tenido. Muy profesional y con excelentes resultados.',
-            rating: 4,
-            image: 'images/testimonial-4.jpg'
+            name: 'Roberto S.',
+            role: 'Cliente frecuente',
+            content: 'Profesionales altamente capacitados. Siempre salgo satisfecho con los resultados.',
+            image: '' // Sin imagen para evitar error 404
         }
     ];
     
@@ -260,7 +343,7 @@ function initTestimonials() {
         
         // Agregar testimonios al slider
         testimonials.forEach((testimonial, index) => {
-            const stars = '★'.repeat(testimonial.rating) + '☆'.repeat(5 - testimonial.rating);
+            const stars = '★'.repeat(5) + '☆'.repeat(0);
             
             const testimonialElement = document.createElement('div');
             testimonialElement.className = 'testimonial-slide';
@@ -269,9 +352,10 @@ function initTestimonials() {
                     <div class="testimonial-rating">${stars}</div>
                     <p class="testimonial-content">"${testimonial.content}"</p>
                     <div class="testimonial-author">
-                        <div class="testimonial-avatar">
-                            <img src="${testimonial.image}" alt="${testimonial.name}">
-                        </div>
+                        ${testimonial.image ? `
+                    <div class="testimonial-image">
+                        <img src="${testimonial.image}" alt="${testimonial.name}">
+                    </div>` : ''}
                         <div class="testimonial-info">
                             <h4>${testimonial.name}</h4>
                             <span>${testimonial.role}</span>
@@ -284,7 +368,63 @@ function initTestimonials() {
     }
 }
 
-// Manejo del formulario de contacto
+/**
+ * Inicializar carga perezosa de imágenes
+ */
+function initLazyLoading() {
+    if ('IntersectionObserver' in window) {
+        const lazyImages = document.querySelectorAll('img[data-src]');
+        
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.removeAttribute('data-src');
+                    observer.unobserve(img);
+                    
+                    // Agregar clase cuando la imagen se carga
+                    img.onload = () => {
+                        img.classList.add('loaded');
+                    };
+                }
+            });
+        });
+
+        lazyImages.forEach(img => {
+            imageObserver.observe(img);
+        });
+    }
+}
+
+/**
+ * Inicializar animaciones al hacer scroll
+ */
+function initScrollAnimations() {
+    // Efecto de aparición suave para las secciones
+    const sections = document.querySelectorAll('section');
+    
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+            }
+        });
+    }, observerOptions);
+    
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+}
+
+/**
+ * Manejo del formulario de contacto
+ */
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
@@ -307,6 +447,54 @@ if (contactForm) {
     });
 }
 
+// Manejar cambios en el tamaño de la ventana
+let resizeTimer;
+window.addEventListener('resize', function() {
+    document.body.classList.add('resize-animation-stopper');
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+        document.body.classList.remove('resize-animation-stopper');
+    }, 400);
+});
+
+// Inicializar todo cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', function() {
+    initSmoothScroll();
+    initComponents();
+    
+    // Agregar clase al body cuando se carga la página
+    document.body.classList.add('page-loaded');
+    
+    // Eliminar preloader si existe
+    const preloader = document.querySelector('.preloader');
+    if (preloader) {
+        setTimeout(() => {
+            preloader.classList.add('loaded');
+            setTimeout(() => {
+                preloader.remove();
+            }, 500);
+        }, 500);
+    }
+});
+
+// Inicializar tooltips
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+});
+
+// Inicializar popovers
+$(function () {
+    $('[data-toggle="popover"]').popover();
+});
+
+/**
+ * Validar email
+ */
+function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(email).toLowerCase());
+}
+
 // Manejo del formulario de newsletter
 const newsletterForm = document.querySelector('.newsletter-form');
 if (newsletterForm) {
@@ -326,19 +514,3 @@ if (newsletterForm) {
         }
     });
 }
-
-// Función para validar email
-function validateEmail(email) {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
-}
-
-// Inicializar tooltips
-$(function () {
-    $('[data-toggle="tooltip"]').tooltip();
-});
-
-// Inicializar popovers
-$(function () {
-    $('[data-toggle="popover"]').popover();
-});
