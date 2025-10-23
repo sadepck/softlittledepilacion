@@ -2456,7 +2456,8 @@ section {
  
  . t e s t i m o n i a l - t e x t : : b e f o r e , 
  . t e s t i m o n i a l - t e x t : : a f t e r   { 
-         c o n t e n t :   ' \  
+         c o n t e n t :   ' \ 
+ 
  ; 
          f o n t - f a m i l y :   G e o r g i a ,   s e r i f ; 
          f o n t - s i z e :   3 r e m ; 
@@ -2472,7 +2473,8 @@ section {
  } 
  
  . t e s t i m o n i a l - t e x t : : a f t e r   { 
-         c o n t e n t :    
+         c o n t e n t :   
+ 
  \ ' ; 
          b o t t o m :   - 3 0 p x ; 
          r i g h t :   5 p x ; 
@@ -2517,7 +2519,8 @@ section {
                  m a r g i n - l e f t :   a u t o ; 
                  m a r g i n - r i g h t :   a u t o ; 
          } 
- }  
+ } 
+ 
  /* ==========================================================================
    #TESTIMONIALS SECTION
    ========================================================================== */
@@ -2822,7 +2825,7 @@ section {
 
 .gallery-img-container {
     position: relative;
-    padding-top: 100%; /* Para mantener la relación de aspecto 1:1 */
+    padding-top: 100%; /* Para mantener la relaciï¿½n de aspecto 1:1 */
     overflow: hidden;
 }
 
@@ -2914,7 +2917,7 @@ section {
    #FOOTER
    ========================================================================== */
 .footer {
-    background-color: #0F172A; /* Azul oscuro del diseño */
+    background-color: #0F172A; /* Azul oscuro del diseï¿½o */
     color: #ffffff;
     padding: 80px 0 0;
     position: relative;
@@ -2953,7 +2956,7 @@ section {
 }
 
 .footer-col h3 {
-    color: #F6C8D5; /* Rosa claro del diseño */
+    color: #F6C8D5; /* Rosa claro del diseï¿½o */
     font-size: 1.5rem;
     margin-bottom: 20px;
     position: relative;
@@ -3039,7 +3042,7 @@ section {
     color: rgba(255, 255, 255, 0.6);
 }
 
-/* Botón de WhatsApp flotante */
+/* Botï¿½n de WhatsApp flotante */
 .whatsapp-float {
     position: fixed;
     width: 60px;
@@ -3107,12 +3110,12 @@ section {
 
 /* Ajustar colores de texto para el nuevo fondo claro */
 .footer-col h3 {
-    color: #9F2B68; /* Color rosa oscuro para títulos */
+    color: #9F2B68; /* Color rosa oscuro para tï¿½tulos */
 }
 
 .footer-col p,
 .footer-col a {
-    color: #555555; /* Color de texto más oscuro para mejor legibilidad */
+    color: #555555; /* Color de texto mï¿½s oscuro para mejor legibilidad */
 }
 
 .footer-col a:hover {
@@ -3148,7 +3151,7 @@ section {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilos específicos para cada red social al hacer hover */
+/* Estilos especï¿½ficos para cada red social al hacer hover */
 .social-link[href*="facebook.com"]:hover {
     background-color: #1877F2 !important; /* Azul de Facebook */
 }
@@ -3182,7 +3185,7 @@ section {
 .social-link:hover i {
     color: #ffffff !important;
 }
-/* Estilos para la descripción del footer */
+/* Estilos para la descripciï¿½n del footer */
 .footer-description {
     color: #555555;
     font-size: 0.9rem;
@@ -3192,7 +3195,7 @@ section {
     text-align: left;
 }
 
-/* Ajustes responsivos para la descripción */
+/* Ajustes responsivos para la descripciï¿½n */
 @media (max-width: 992px) {
     .footer-description {
         max-width: 100%;
@@ -3206,9 +3209,9 @@ section {
         margin: 15px auto 25px;
     }
 }
-/* Estilos para los enlaces rápidos del footer */
+/* Estilos para los enlaces rï¿½pidos del footer */
 .footer-col2 h4 {
-    color: #9F2B68 !important; /* Color rosa oscuro para el título */
+    color: #F6C8D5 !important; /* Color rosa oscuro para el tï¿½tulo */
     font-size: 1.1rem;
     margin-bottom: 20px;
     font-weight: 600;
@@ -3240,7 +3243,7 @@ section {
     padding-left: 5px;
 }
 
-/* Asegurar que no haya transparencia en los íconos */
+/* Asegurar que no haya transparencia en los ï¿½conos */
 .footer-col i {
     opacity: 1 !important;
 }
@@ -3248,14 +3251,14 @@ section {
    #RESPONSIVE STYLES
    ========================================================================== */
 
-/* Ajustes generales para móviles */
+/* Ajustes generales para mï¿½viles */
 @media (max-width: 767px) {
-    /* Ajustes de tipografía */
+    /* Ajustes de tipografï¿½a */
     html {
         font-size: 14px;
     }
     
-    /* Header y navegación */
+    /* Header y navegaciï¿½n */
     .header {
         padding: 15px 0;
     }
@@ -3316,7 +3319,7 @@ section {
         margin: 0 auto;
     }
     
-    /* Sección de Servicios */
+    /* Secciï¿½n de Servicios */
     .services {
         padding: 60px 0;
     }
@@ -3335,7 +3338,7 @@ section {
         grid-template-columns: 1fr;
     }
     
-    /* Galería */
+    /* Galerï¿½a */
     .gallery {
         padding: 60px 0;
     }
@@ -3385,7 +3388,7 @@ section {
         border-radius: 20px;
     }
     
-    /* Botón de WhatsApp flotante */
+    /* Botï¿½n de WhatsApp flotante */
     .whatsapp-float {
         width: 50px;
         height: 50px;
@@ -3416,7 +3419,7 @@ section {
     }
 }
 
-/* Ajustes para pantallas pequeñas de móviles */
+/* Ajustes para pantallas pequeï¿½as de mï¿½viles */
 @media (max-width: 480px) {
     .hero {
         padding: 100px 0 50px;
@@ -3442,7 +3445,7 @@ section {
     }
 }
 
-/* Ajustes para pantallas muy pequeñas */
+/* Ajustes para pantallas muy pequeï¿½as */
 @media (max-width: 360px) {
     html {
         font-size: 13px;
@@ -3525,7 +3528,7 @@ section {
     animation: fadeInUp 1s ease-out 0.4s both;
 }
 
-/* Animación para el contenido */
+/* Animaciï¿½n para el contenido */
 @keyframes fadeInUp {
     from {
         opacity: 0;

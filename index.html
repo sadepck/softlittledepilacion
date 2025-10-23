@@ -25,7 +25,7 @@
     <!-- Header y Navegación -->
     <header class="header">
         <div class="container">
-            <nav class="navbar">
+            <nav class="navbar" style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
                 <a href="#" class="logo">
                     <div class="logo-text">
                         <span class="logo-main">Soft Little</span>
@@ -37,12 +37,14 @@
                     <span></span>
                     <span></span>
                 </div>
-                <ul class="nav-links">
+                <div class="nav-links-container" style="display: flex; align-items: center; flex-grow: 1; justify-content: center;">
+                    <ul class="nav-links" style="display: flex; align-items: center; margin: 0; padding: 0; list-style: none;">
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#servicios">Servicios</a></li>
                     <li><a href="#galeria">Galería</a></li>
                     <li><a href="#testimonios">Testimonios</a></li>
-                </ul>
+                    </ul>
+                </div>
                 <div class="contact-container">
                     <a href="#contacto" class="contact-link">Contacto</a>
                 </div>
@@ -74,150 +76,105 @@
     </section>
 
     <!-- Sección de Servicios -->
-    <section id="servicios" class="services">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <span class="section-subtitle">Nuestros Servicios</span>
-                <h2>Tratamientos Profesionales</h2>
-                <p class="section-description">En Soft Little Depilación, ofrecemos una amplia gama de tratamientos estéticos realizados por profesionales certificados. 
-                Utilizamos tecnología de última generación y productos de la más alta calidad para garantizar resultados excepcionales y una experiencia única.</p>
+    <section id="servicios" class="services" style="padding: 2.5rem 0;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
+            <div class="section-header" data-aos="fade-up" style="text-align: center; margin-bottom: 1.5rem;">
+                <span class="section-subtitle" style="display: block; color: #ff6b6b; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px;">Nuestros Servicios</span>
+                <h2 style="font-size: 1.8rem; margin: 0 0 1rem; color: #333;">Tratamientos Profesionales</h2>
+                <p class="section-description" style="max-width: 700px; margin: 0 auto 1.5rem; color: #666; font-size: 0.95rem; line-height: 1.5;">Tratamientos estéticos profesionales para realzar tu belleza natural con resultados excepcionales.</p>
             </div>
             
-            <div class="services-grid">
+            <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.2rem; padding: 0.5rem 0;">
                 <!-- Servicio 1 -->
-                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-card" style="background: white; border-radius: 8px; padding: 0.9rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); height: 100%; display: flex; flex-direction: column; transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'" onmouseout="this.style.transform=''; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.05)'" data-aos="fade-up" data-aos-delay="200">
                     <div class="service-icon">
                         <i class="fas fa-eye"></i>
                     </div>
-                    <h3>Diseño de Cejas</h3>
-                    <p class="service-description">Perfilado profesional de cejas que realza tu mirada según la estructura de tu rostro. Incluye diseño, depilación con cera y pinza, y tinte opcional.</p>
-                    <div class="service-features">
-                        <p><i class="fas fa-check"></i> Diseño personalizado</p>
-                        <p><i class="fas fa-check"></i> Tinte opcional</p>
-                        <p><i class="fas fa-check"></i> Duración 30 min</p>
+                    <h3 style="font-size: 1.1rem; margin: 0.5rem 0 0.3rem; color: #333;">Diseño de Cejas</h3>
+                    <p class="service-description" style="font-size: 0.8rem; color: #666; margin: 0.2rem 0 0.6rem; line-height: 1.4; flex-grow: 1;">Perfilado profesional de cejas que realza tu mirada según la estructura de tu rostro. Incluye diseño, depilación con cera y pinza, y tinte opcional.</p>
+                    <div class="service-features" style="margin: 0.5rem 0;">
+                        <p style="margin: 0.2rem 0; font-size: 0.8rem;"><i class="fas fa-check" style="margin-right: 0.3rem; color: #4CAF50; font-size: 0.7rem;"></i> Diseño personalizado</p>
+                        <p style="margin: 0.2rem 0; font-size: 0.8rem;"><i class="fas fa-check" style="margin-right: 0.3rem; color: #4CAF50; font-size: 0.7rem;"></i> Tinte opcional</p>
+                        <p style="margin: 0.2rem 0; font-size: 0.8rem;"><i class="fas fa-check" style="margin-right: 0.3rem; color: #4CAF50; font-size: 0.7rem;"></i> Duración 30 min</p>
                     </div>
-                    <div class="service-price">
+                    <div class="service-price" style="margin: 0.5rem 0 0.8rem; padding-top: 0.5rem; border-top: 1px dashed #eee;">
                         <span>Desde</span>
                         <span class="price">$15.000</span>
                         <span class="price-note">sesión</span>
                     </div>
-                    <a href="#contacto" class="btn-service">
-                        <i class="fas fa-calendar-alt"></i> Reservar Cita
-                    </a>
-                </div>
-                
-                <!-- Servicio 2 -->
-                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-icon">
-                        <i class="fas fa-eye"></i>
-                    </div>
-                    <h3>Diseño de Cejas</h3>
-                    <p class="service-description">Perfilado profesional de cejas que realza tu mirada según la estructura de tu rostro. Incluye diseño, depilación con cera y pinza, y tinte opcional.</p>
-                    <div class="service-features">
-                        <p><i class="fas fa-check"></i> Diseño personalizado</p>
-                        <p><i class="fas fa-check"></i> Tinte opcional</p>
-                        <p><i class="fas fa-check"></i> Duración 30 min</p>
-                    </div>
-                    <div class="service-price">
-                        <span>Desde</span>
-                        <span class="price">$15.000</span>
-                        <span class="price-note">sesión</span>
-                    </div>
-                    <a href="#contacto" class="btn-service">
-                        <i class="fas fa-calendar-alt"></i> Reservar Cita
+                    <a href="#contacto" class="btn-service" style="display: inline-block; width: 100%; text-align: center; padding: 0.5rem; background: #ff6b6b; color: white; text-decoration: none; border-radius: 4px; margin-top: auto; font-size: 0.85rem; transition: all 0.2s ease; font-weight: 500;" onmouseover="this.style.background='#ff5252'" onmouseout="this.style.background='#ff6b6b'"
+                        <i class="fas fa-calendar-alt" style="margin-right: 5px;"></i> Reservar Cita
                     </a>
                 </div>
                 
                 <!-- Servicio 3 -->
-                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-card" style="background: white; border-radius: 8px; padding: 0.9rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); height: 100%; display: flex; flex-direction: column; transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'" onmouseout="this.style.transform=''; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.05)'" data-aos="fade-up" data-aos-delay="300">
                     <div class="service-icon">
                         <i class="fas fa-eye-lashes"></i>
                     </div>
-                    <h3>Lifting de Pestañas</h3>
-                    <p class="service-description">Realza la mirada con un efecto de pestañas más largas y curvadas sin necesidad de extensiones. Resultado natural que dura entre 6-8 semanas.</p>
-                    <div class="service-features">
-                        <p><i class="fas fa-check"></i> Dura 6-8 semanas</p>
-                        <p><i class="fas fa-check"></i> Efecto natural</p>
-                        <p><i class="fas fa-check"></i> Sin dañar las pestañas</p>
+                    <h3 style="font-size: 1.1rem; margin: 0.5rem 0 0.3rem; color: #333;">Lifting de Pestañas</h3>
+                    <p class="service-description" style="font-size: 0.8rem; color: #666; margin: 0.2rem 0 0.6rem; line-height: 1.4; flex-grow: 1;">Realza la mirada con un efecto de pestañas más largas y curvadas sin necesidad de extensiones. Resultado natural que dura entre 6-8 semanas.</p>
+                    <div class="service-features" style="margin: 0.5rem 0;">
+                        <p style="margin: 0.2rem 0; font-size: 0.8rem;"><i class="fas fa-check" style="margin-right: 0.3rem; color: #4CAF50; font-size: 0.7rem;"></i> Dura 6-8 semanas</p>
+                        <p style="margin: 0.2rem 0; font-size: 0.8rem;"><i class="fas fa-check" style="margin-right: 0.3rem; color: #4CAF50; font-size: 0.7rem;"></i> Efecto natural</p>
+                        <p style="margin: 0.2rem 0; font-size: 0.8rem;"><i class="fas fa-check" style="margin-right: 0.3rem; color: #4CAF50; font-size: 0.7rem;"></i> Sin dañar las pestañas</p>
                     </div>
-                    <div class="service-price">
+                    <div class="service-price" style="margin: 0.5rem 0 0.8rem; padding-top: 0.5rem; border-top: 1px dashed #eee;">
                         <span>Precio</span>
                         <span class="price">$30.000</span>
                         <span class="price-note">por sesión</span>
                     </div>
-                    <a href="#contacto" class="btn-service">
-                        <i class="fas fa-calendar-alt"></i> Reservar Cita
+                    <a href="#contacto" class="btn-service" style="display: inline-block; width: 100%; text-align: center; padding: 0.5rem; background: #ff6b6b; color: white; text-decoration: none; border-radius: 4px; margin-top: auto; font-size: 0.85rem; transition: all 0.2s ease; font-weight: 500;" onmouseover="this.style.background='#ff5252'" onmouseout="this.style.background='#ff6b6b'"
+                        <i class="fas fa-calendar-alt" style="margin-right: 5px;"></i> Reservar Cita
                     </a>
                 </div>
                 
                 <!-- Servicio 4 - Brown Lamination -->
-                <div class="service-card" data-aos="fade-up" data-aos-delay="350">
+                <div class="service-card" style="background: white; border-radius: 8px; padding: 0.9rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); height: 100%; display: flex; flex-direction: column; transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'" onmouseout="this.style.transform=''; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.05)'" data-aos="fade-up" data-aos-delay="350">
                     <div class="service-icon">
                         <i class="fas fa-brush"></i>
                     </div>
-                    <h3>Brown Lamination</h3>
-                    <p class="service-description">Tratamiento que alisa, fija y da forma a las cejas, logrando un aspecto natural y definido. Ideal para cejas gruesas o rebeldes. Resultados duraderos y de bajo mantenimiento.</p>
-                    <div class="service-features">
-                        <p><i class="fas fa-check"></i> Dura 6-8 semanas</p>
-                        <p><i class="fas fa-check"></i> Efecto natural</p>
-                        <p><i class="fas fa-check"></i> Cejas perfectas</p>
-                        <p><i class="fas fa-check"></i> Bajo mantenimiento</p>
+                    <h3 style="font-size: 1.1rem; margin: 0.5rem 0 0.3rem; color: #333;">Brown Lamination</h3>
+                    <p class="service-description" style="font-size: 0.8rem; color: #666; margin: 0.2rem 0 0.6rem; line-height: 1.4; flex-grow: 1;">Tratamiento que alisa, fija y da forma a las cejas, logrando un aspecto natural y definido. Ideal para cejas gruesas o rebeldes. Resultados duraderos y de bajo mantenimiento.</p>
+                    <div class="service-features" style="margin: 0.5rem 0;">
+                        <p style="margin: 0.2rem 0; font-size: 0.8rem;"><i class="fas fa-check" style="margin-right: 0.3rem; color: #4CAF50; font-size: 0.7rem;"></i> Dura 6-8 semanas</p>
+                        <p style="margin: 0.2rem 0; font-size: 0.8rem;"><i class="fas fa-check" style="margin-right: 0.3rem; color: #4CAF50; font-size: 0.7rem;"></i> Efecto natural</p>
+                        <p style="margin: 0.2rem 0; font-size: 0.8rem;"><i class="fas fa-check" style="margin-right: 0.3rem; color: #4CAF50; font-size: 0.7rem;"></i> Cejas perfectas</p>
+                        <p style="margin: 0.2rem 0; font-size: 0.8rem;"><i class="fas fa-check" style="margin-right: 0.3rem; color: #4CAF50; font-size: 0.7rem;"></i> Bajo mantenimiento</p>
                     </div>
-                    <div class="service-price">
+                    <div class="service-price" style="margin: 0.5rem 0 0.8rem; padding-top: 0.5rem; border-top: 1px dashed #eee;">
                         <span>Precio</span>
                         <span class="price">$28.000</span>
                         <span class="price-note">por sesión</span>
                     </div>
-                    <a href="#contacto" class="btn-service">
-                        <i class="fas fa-calendar-alt"></i> Reservar Cita
+                    <a href="#contacto" class="btn-service" style="display: inline-block; width: 100%; text-align: center; padding: 0.5rem; background: #ff6b6b; color: white; text-decoration: none; border-radius: 4px; margin-top: auto; font-size: 0.85rem; transition: all 0.2s ease; font-weight: 500;" onmouseover="this.style.background='#ff5252'" onmouseout="this.style.background='#ff6b6b'"
+                        <i class="fas fa-calendar-alt" style="margin-right: 5px;"></i> Reservar Cita
                     </a>
                 </div>
                 
                 <!-- Servicio 5 - Tratamiento Facial -->
-                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="service-card" style="background: white; border-radius: 8px; padding: 0.9rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); height: 100%; display: flex; flex-direction: column; transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'" onmouseout="this.style.transform=''; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.05)'" data-aos="fade-up" data-aos-delay="400">
                     <div class="service-icon">
                         <i class="fas fa-spa"></i>
                     </div>
-                    <h3>Tratamiento Facial</h3>
-                    <p class="service-description">Limpieza profunda, hidratación y tratamiento personalizado según las necesidades de tu piel. Incluye limpieza, exfoliación, extracción, mascarilla y masaje.</p>
-                    <div class="service-features">
-                        <p><i class="fas fa-check"></i> 60 minutos</p>
-                        <p><i class="fas fa-check"></i> Productos premium</p>
-                        <p><i class="fas fa-check"></i> Para todo tipo de piel</p>
-                        <p><i class="fas fa-check"></i> Resultados inmediatos</p>
+                    <h3 style="font-size: 1.1rem; margin: 0.5rem 0 0.3rem; color: #333;">Tratamiento Facial</h3>
+                    <p class="service-description" style="font-size: 0.8rem; color: #666; margin: 0.2rem 0 0.6rem; line-height: 1.4; flex-grow: 1;">Limpieza profunda, hidratación y tratamiento personalizado según las necesidades de tu piel. Incluye limpieza, exfoliación, extracción, mascarilla y masaje.</p>
+                    <div class="service-features" style="margin: 0.5rem 0;">
+                        <p style="margin: 0.2rem 0; font-size: 0.8rem;"><i class="fas fa-check" style="margin-right: 0.3rem; color: #4CAF50; font-size: 0.7rem;"></i> 60 minutos</p>
+                        <p style="margin: 0.2rem 0; font-size: 0.8rem;"><i class="fas fa-check" style="margin-right: 0.3rem; color: #4CAF50; font-size: 0.7rem;"></i> Productos premium</p>
+                        <p style="margin: 0.2rem 0; font-size: 0.8rem;"><i class="fas fa-check" style="margin-right: 0.3rem; color: #4CAF50; font-size: 0.7rem;"></i> Para todo tipo de piel</p>
+                        <p style="margin: 0.2rem 0; font-size: 0.8rem;"><i class="fas fa-check" style="margin-right: 0.3rem; color: #4CAF50; font-size: 0.7rem;"></i> Resultados inmediatos</p>
                     </div>
-                    <div class="service-price">
+                    <div class="service-price" style="margin: 0.5rem 0 0.8rem; padding-top: 0.5rem; border-top: 1px dashed #eee;">
                         <span>Precio</span>
                         <span class="price">$35.000</span>
                         <span class="price-note">por sesión</span>
                     </div>
-                    <a href="#contacto" class="btn-service">
-                        <i class="fas fa-calendar-alt"></i> Reservar Cita
+                    <a href="#contacto" class="btn-service" style="display: inline-block; width: 100%; text-align: center; padding: 0.5rem; background: #ff6b6b; color: white; text-decoration: none; border-radius: 4px; margin-top: auto; font-size: 0.85rem; transition: all 0.2s ease; font-weight: 500;" onmouseover="this.style.background='#ff5252'" onmouseout="this.style.background='#ff6b6b'"
+                        <i class="fas fa-calendar-alt" style="margin-right: 5px;"></i> Reservar Cita
                     </a>
                 </div>
                 
-                <!-- Servicio 6 - Depilación con Cera -->
-                <div class="service-card" data-aos="fade-up" data-aos-delay="450">
-                    <div class="service-icon">
-                        <i class="fas fa-wind"></i>
-                    </div>
-                    <h3>Depilación con Cera</h3>
-                    <p class="service-description">Técnica tradicional que elimina el vello desde la raíz, dejando la piel suave por más tiempo. Usamos cera de alta calidad hipoalergénica para mayor comodidad.</p>
-                    <div class="service-features">
-                        <p><i class="fas fa-check"></i> Para todo el cuerpo</p>
-                        <p><i class="fas fa-check"></i> Piel suave por semanas</p>
-                        <p><i class="fas fa-check"></i> Técnica profesional</p>
-                        <p><i class="fas fa-check"></i> Cera hipoalergénica</p>
-                    </div>
-                    <div class="service-price">
-                        <span>Precio</span>
-                        <span class="price">$12.000</span>
-                        <span class="price-note">por zona</span>
-                    </div>
-                    <a href="#contacto" class="btn-service">
-                        <i class="fas fa-calendar-alt"></i> Reservar Cita
-                    </a>
-                </div>
             </div>
         </div>
     </section>
@@ -331,7 +288,7 @@
                         <img src="images/CEJA1.jpg" alt="Diseño de cejas profesional" class="gallery-img">
                         <div class="gallery-overlay">
                             <div class="gallery-info">
-                                <h3>Diseño de Cejas</h3>
+                                <h3 style="font-size: 1.1rem; margin: 0.5rem 0 0.3rem; color: #333;">Diseño de Cejas</h3>
                                 <p>Perfección en el diseño de cejas para realzar tu mirada</p>
                             </div>
                         </div>
@@ -344,7 +301,7 @@
                         <img src="images/descarga.jpg" alt="Resultados de depilación láser" class="gallery-img">
                         <div class="gallery-overlay">
                             <div class="gallery-info">
-                                <h3>Depilación Láser</h3>
+                                <h3 style="font-size: 1.1rem; margin: 0.5rem 0 0.3rem; color: #333;">Depilación Láser</h3>
                                 <p>Resultados visibles desde la primera sesión</p>
                             </div>
                         </div>
@@ -357,7 +314,7 @@
                         <img src="images/descarga (1).jpg" alt="Tratamiento facial de rejuvenecimiento" class="gallery-img">
                         <div class="gallery-overlay">
                             <div class="gallery-info">
-                                <h3>Tratamiento Facial</h3>
+                                <h3 style="font-size: 1.1rem; margin: 0.5rem 0 0.3rem; color: #333;">Tratamiento Facial</h3>
                                 <p>Rejuvenecimiento y cuidado profesional de la piel</p>
                             </div>
                         </div>
@@ -495,8 +452,8 @@
     <footer id="footer" class="footer">
         <div class="footer-content">
             <div class="footer-col footer-col1">
-                <h3>Soft Little Depilación</h3>
-                <p class="footer-description">Somos un centro especializado en depilación láser y tratamientos estéticos profesionales. En Soft Little Depilación combinamos tecnología de punta con atención personalizada para ofrecerte resultados visibles desde la primera sesión. Nuestro equipo de profesionales certificados está comprometido con tu bienestar y belleza, ofreciendo tratamientos seguros, efectivos y adaptados a tus necesidades particulares. Descubre la diferencia de un servicio profesional que cuida de ti en cada detalle.</p>
+                <h3 style="color: #F6C8D5;">Soft Little Depilación</h3>
+                <p class="footer-description">Centro especializado en depilación láser y tratamientos estéticos profesionales. Ofrecemos tecnología de punta y atención personalizada con profesionales certificados para resultados visibles desde la primera sesión.</p>
                 <div class="social-links">
                     <a href="#" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
@@ -505,7 +462,7 @@
                 <p class="copyright">&copy; 2025 Soft Little Depilación. Todos los derechos reservados.</p>
             </div>
             <div class="footer-col footer-col2">
-                <h4>Enlaces rápidos</h4>
+                <h4 style="color: #F6C8D5;">Horario de Atención</h4>
                 <ul>
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#servicios">Servicios</a></li>
@@ -514,7 +471,7 @@
                 </ul>
             </div>
             <div class="footer-col footer-col3">
-                <h4>Contacto</h4>
+                <h4 style="color: #F6C8D5;">Contacto</h4>
                 <p><i class="fas fa-map-marker-alt"></i> Rudecindo Ortega, Providencia</p>
                 <p><i class="fas fa-phone-alt"></i> +56 9 XXXX XXXX</p>
                 <p><i class="far fa-envelope"></i> contacto@softlittledepilacion.cl</p>
