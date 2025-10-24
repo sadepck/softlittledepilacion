@@ -2,6 +2,14 @@
    #VARIABLES
    ========================================================================== */
 :root {
+    /* Breakpoints */
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --breakpoint-xxl: 1400px;
+    
+    /* Colores principales */
     /* Colores principales */
     --color-primary: #F6C8D5;       /* Rosa blush suave - Principal */
     --color-secondary: #f8e3e9;     /* Rosa muy claro - Secundario */
@@ -635,23 +643,6 @@ select:focus {
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
-    height: 21px;
-    cursor: pointer;
-    z-index: 1001;
-}
-
-.menu-toggle span {
-    display: block;
-    height: 3px;
-    width: 100%;
-    background-color: var(--color-dark);
-    border-radius: 3px;
-    transition: var(--transition);
-}
-
-/* Header Scroll */
-.header.scrolled {
-    padding: 5px 0;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -2930,7 +2921,8 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('../images/pattern-bg.png') no-repeat center center/cover;
+    background: linear-gradient(135deg, #fff9fb 25%, #fff5f7 25%, #fff5f7 50%, #fff9fb 50%, #fff9fb 75%, #fff5f7 75%, #fff5f7 100%);
+    background-size: 40px 40px;
     opacity: 0.05;
     z-index: 1;
 }
