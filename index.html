@@ -31,29 +31,39 @@
 </head>
 <body>
     <!-- Header y Navegación -->
-    <header class="header">
+    <header class="header" role="banner">
         <div class="container">
-            <nav class="navbar">
-                <a href="#" class="logo">
+            <nav class="navbar" aria-label="Navegación principal">
+                <!-- Logo -->
+                <a href="#inicio" class="logo" aria-label="Inicio - Soft Little Depilación">
                     <div class="logo-text">
                         <span class="logo-main">Soft Little</span>
                         <span class="logo-sub">DEPILACIÓN</span>
                     </div>
                 </a>
-                <div class="menu-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <div class="nav-links-container">
-                    <ul class="nav-links">
-                        <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#servicios">Servicios</a></li>
-                        <li><a href="#galeria">Galería</a></li>
-                        <li><a href="#testimonios">Testimonios</a></li>
+
+                <!-- Menú Hamburguesa -->
+                <button class="menu-toggle" aria-label="Menú" aria-expanded="false" aria-controls="main-navigation">
+                    <span class="menu-line"></span>
+                    <span class="menu-line"></span>
+                    <span class="menu-line"></span>
+                </button>
+
+                <!-- Menú de Navegación -->
+                <div class="nav-container" id="main-navigation">
+                    <ul class="nav-links" role="menubar">
+                        <li role="none"><a href="#inicio" class="nav-link" role="menuitem">Inicio</a></li>
+                        <li role="none"><a href="#servicios" class="nav-link" role="menuitem">Servicios</a></li>
+                        <li role="none"><a href="#galeria" class="nav-link" role="menuitem">Galería</a></li>
+                        <li role="none"><a href="#testimonios" class="nav-link" role="menuitem">Testimonios</a></li>
                     </ul>
-                    <div class="contact-container">
-                        <a href="#contacto" class="contact-link">Contacto</a>
+                    <div class="contact-wrapper">
+                        <a href="#contacto" class="bubble-button" role="button" aria-label="Contacto">
+                            <span class="bubble-button__text">Contacto</span>
+                            <div class="bubble-container">
+                                <!-- Burbujas generadas dinámicamente con JavaScript -->
+                            </div>
+                        </a>
                     </div>
                 </div>
             </nav>
@@ -73,8 +83,11 @@
                     </p>
                 </div>
                 <div class="cta-buttons">
-                    <a href="#contacto" class="btn btn-primary">
-                        <i class="fas fa-calendar-check"></i> Reserva tu Consulta
+                    <a href="#contacto" class="gradient-btn" role="button" aria-label="Reserva tu consulta">
+                        <span class="gradient-btn__text">
+                            <i class="fas fa-calendar-check"></i> Reserva tu Consulta
+                        </span>
+                        <span class="gradient-btn__gradient"></span>
                     </a>
                     <a href="#servicios" class="btn btn-outline">Ver Tratamientos</a>
                 </div>
@@ -94,7 +107,7 @@
             
             <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.2rem; padding: 0.5rem 0;">
                 <!-- Servicio 1 -->
-                <div class="service-card" style="background: white; border-radius: 8px; padding: 0.9rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); height: 100%; display: flex; flex-direction: column; transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'" onmouseout="this.style.transform=''; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.05)'" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-card left-card" style="background: white; border-radius: 8px; padding: 0.9rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); height: 100%; display: flex; flex-direction: column; transition: transform 1s ease-out, box-shadow 0.5s ease, opacity 1s ease; transform: translateX(-100px); opacity: 0;" onmouseover="this.style.transform='translateX(0) translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateX(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.05)'" data-aos="fade-right" data-aos-duration="1200" data-aos-delay="200">
                     <div class="service-icon">
                         <i class="fas fa-eye"></i>
                     </div>
@@ -116,7 +129,7 @@
                 </div>
                 
                 <!-- Servicio 3 -->
-                <div class="service-card" style="background: white; border-radius: 8px; padding: 0.9rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); height: 100%; display: flex; flex-direction: column; transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'" onmouseout="this.style.transform=''; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.05)'" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-card left-card" style="background: white; border-radius: 8px; padding: 0.9rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); height: 100%; display: flex; flex-direction: column; transition: transform 1s ease-out, box-shadow 0.5s ease, opacity 1s ease; transform: translateX(-100px); opacity: 0;" onmouseover="this.style.transform='translateX(0) translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateX(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.05)'" data-aos="fade-right" data-aos-duration="1200" data-aos-delay="300">
                     <div class="service-icon">
                         <i class="fas fa-eye-lashes"></i>
                     </div>
@@ -138,7 +151,7 @@
                 </div>
                 
                 <!-- Servicio 4 - Brown Lamination -->
-                <div class="service-card" style="background: white; border-radius: 8px; padding: 0.9rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); height: 100%; display: flex; flex-direction: column; transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'" onmouseout="this.style.transform=''; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.05)'" data-aos="fade-up" data-aos-delay="350">
+                <div class="service-card right-card" style="background: white; border-radius: 8px; padding: 0.9rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); height: 100%; display: flex; flex-direction: column; transition: transform 1s ease-out, box-shadow 0.5s ease, opacity 1s ease; transform: translateX(100px); opacity: 0;" onmouseover="this.style.transform='translateX(0) translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateX(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.05)'" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="350">
                     <div class="service-icon">
                         <i class="fas fa-brush"></i>
                     </div>
@@ -161,7 +174,7 @@
                 </div>
                 
                 <!-- Servicio 5 - Tratamiento Facial -->
-                <div class="service-card" style="background: white; border-radius: 8px; padding: 0.9rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); height: 100%; display: flex; flex-direction: column; transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'" onmouseout="this.style.transform=''; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.05)'" data-aos="fade-up" data-aos-delay="400">
+                <div class="service-card right-card" style="background: white; border-radius: 8px; padding: 0.9rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); height: 100%; display: flex; flex-direction: column; transition: transform 1s ease-out, box-shadow 0.5s ease, opacity 1s ease; transform: translateX(100px); opacity: 0;" onmouseover="this.style.transform='translateX(0) translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateX(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.05)'" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="400">
                     <div class="service-icon">
                         <i class="fas fa-spa"></i>
                     </div>
@@ -196,67 +209,77 @@
                 <span class="section-subtitle">Testimonios Reales</span>
                 <h2>Lo que dicen nuestros clientes</h2>
                 <p class="section-description">En Soft Little Depilación, el 98% de nuestros clientes recomiendan nuestros servicios. 
-                Nuestro compromiso es ofrecer tratamientos personalizados con los más altos estándares de calidad y profesionalismo. 
-                Estas son algunas de las experiencias de personas que han confiado en nosotros para su cuidado personal.</p>
+                Nuestro compromiso es ofrecer tratamientos personalizados con los más altos estándares de calidad.</p>
             </div>
             
             <div class="testimonials-grid">
                 <!-- Testimonio 1 -->
                 <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="testimonial-content">
-                        <div class="testimonial-rating">★★★★★</div>
-                        <p class="testimonial-text">"Excelente servicio, muy profesional y el resultado superó mis expectativas. La atención es personalizada y el trato es excelente. ¡Totalmente recomendado!"</p>
-                        <div class="testimonial-footer">
-                            <span class="testimonial-name">María González</span>
-                            <span class="testimonial-category">Cliente frecuente</span>
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-user"></i>
                         </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Excelente servicio, muy profesional y el resultado superó mis expectativas. La atención es personalizada y el trato es excelente."</p>
+                    <div class="testimonial-footer">
+                        <span class="testimonial-name">María González</span>
+                        <span class="testimonial-category">Cliente frecuente</span>
                     </div>
                 </div>
                 
                 <!-- Testimonio 2 -->
                 <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="testimonial-content">
-                        <div class="testimonial-rating">★★★★★</div>
-                        <p class="testimonial-text">"Me encanta como me dejan la piel después de cada sesión. El trato es excelente, el ambiente muy agradable y los resultados son increíbles. No voy a ningún otro lugar desde que los descubrí."</p>
-                        <div class="testimonial-footer">
-                            <span class="testimonial-name">Carolina Martínez</span>
-                            <span class="testimonial-category">Cliente desde 2022</span>
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-user"></i>
                         </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Me encanta como me dejan la piel después de cada sesión. El trato es excelente, el ambiente muy agradable y los resultados son increíbles."</p>
+                    <div class="testimonial-footer">
+                        <span class="testimonial-name">Carolina Martínez</span>
+                        <span class="testimonial-category">Cliente desde 2022</span>
                     </div>
                 </div>
                 
                 <!-- Testimonio 3 -->
                 <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
-                        <div class="testimonial-footer">
-                            <span class="testimonial-name">Ana Torres</span>
-                            <span class="testimonial-category">Cliente frecuente</span>
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
                         </div>
                     </div>
-                </div>
-                
-                <!-- Testimonio 5 -->
-                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="500">
-                    <div class="testimonial-content">
-                        <div class="testimonial-rating">★★★★★</div>
-                        <p class="testimonial-text">"La mejor decisión que pude tomar para mi piel. Los resultados son visibles desde la primera sesión. El personal es muy profesional y el ambiente es muy acogedor."</p>
-                        <div class="testimonial-footer">
-                            <span class="testimonial-name">Sofía Ramírez</span>
-                            <span class="testimonial-category">Cliente desde 2023</span>
-                        </div>
+                    <p class="testimonial-text">"Increíble la diferencia que noté desde la primera sesión. El personal es muy atento y profesional. Definitivamente ha sido una de las mejores decisiones."</p>
+                    <div class="testimonial-footer">
+                        <span class="testimonial-name">Ana Torres</span>
+                        <span class="testimonial-category">Cliente frecuente</span>
                     </div>
                 </div>
-                
-                <!-- Testimonio 6 -->
-                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="600">
-                    <div class="testimonial-content">
-                        <div class="testimonial-rating">★★★★★</div>
-                        <p class="testimonial-text">"Increíble atención y resultados. Me encanta que se toman el tiempo para explicar cada paso del proceso. Definitivamente superó mis expectativas."</p>
-                        <div class="testimonial-footer">
-                            <span class="testimonial-name">Valentina López</span>
-                            <span class="testimonial-category">Cliente frecuente</span>
-                        </div>
-                    </div>
-                </div>
+            </div>
+            
+            <div class="testimonial-cta" data-aos="fade-up" data-aos-delay="400">
+                <p>¿Quieres compartir tu experiencia con nosotros?</p>
+                <a href="#contacto" class="btn btn-primary">Deja tu testimonio</a>
             </div>
         </div>
     </section>
@@ -495,15 +518,8 @@
     <!-- Scripts personalizados -->
     <script src="js/header.js"></script>
     <script src="js/main.js"></script>
-    
-    <script>
-        // Inicializar AOS
-        document.addEventListener('DOMContentLoaded', function() {
-            // Inicializar AOS
-            if (typeof AOS !== 'undefined') {
-                AOS.init({
-                    duration: 800,
-                    once: true,
+    <script src="js/contact.js"></script>
+    <script src="js/animations.js"></script>
                     easing: 'ease-in-out',
                     offset: 100
                 });
@@ -520,5 +536,9 @@
             }
         });
     </script>
+    <script src="js/testimonials-animation.js"></script>
+    
+    <!-- Bubble Button Animation -->
+    <script src="js/bubble-button.js"></script>
 </body>
 </html>
