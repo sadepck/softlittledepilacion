@@ -29,6 +29,11 @@
     <link rel="stylesheet" href="css/testimonials.css">
     <link rel="stylesheet" href="css/services.css">
     <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="css/hero-slider.css">
+    
+    <!-- Slick Carousel JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </head>
 <body>
     <!-- Header y Navegación -->
@@ -71,30 +76,60 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="inicio" class="hero" style="background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('images/centros-de-depilacion.jpg') no-repeat center center/cover;">
-        <div class="container">
-            <div class="hero-content" data-aos="fade-up">
-                <div class="hero-text">
-                    <span class="hero-pretitle">Belleza y Bienestar</span>
-                    <h1 class="hero-title">Tu Belleza Natural en las Mejores Manos</h1>
-                    <p class="hero-description">
-                        Descubre la excelencia en tratamientos estéticos personalizados. 
-                        Tecnología avanzada y atención experta para realzar tu belleza natural.
-                    </p>
-                </div>
+    <!-- Hero Slider Section -->
+    <section id="inicio" class="hero-slider">
+        <!-- Slide 1 -->
+        <div class="hero-slide">
+            <div class="hero-content">
+                <span class="hero-pretitle">Belleza y Bienestar</span>
+                <h1 class="hero-title">Tu Belleza Natural en las Mejores Manos</h1>
+                <p class="hero-description">
+                    Descubre la excelencia en tratamientos estéticos personalizados. 
+                    Tecnología avanzada y atención experta para realzar tu belleza natural.
+                </p>
                 <div class="cta-buttons">
                     <a href="#contacto" class="gradient-btn" role="button" aria-label="Reserva tu consulta">
-                        <span class="gradient-btn__text">
-                            <i class="fas fa-calendar-check"></i> Reserva tu Consulta
-                        </span>
-                        <span class="gradient-btn__gradient"></span>
+                        <i class="fas fa-calendar-check"></i> Reserva tu Consulta
                     </a>
-                    <a href="#servicios" class="btn btn-outline">Ver Tratamientos</a>
+                    <a href="#servicios" class="btn-outline">Ver Tratamientos</a>
                 </div>
             </div>
         </div>
         
+        <!-- Slide 2 -->
+        <div class="hero-slide">
+            <div class="hero-content">
+                <span class="hero-pretitle">Tecnología Avanzada</span>
+                <h1 class="hero-title">Resultados que Marcan la Diferencia</h1>
+                <p class="hero-description">
+                    Equipamiento de última generación para ofrecerte los mejores resultados 
+                    en depilación y tratamientos estéticos.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#servicios" class="gradient-btn" role="button" aria-label="Nuestros servicios">
+                        <i class="fas fa-spa"></i> Nuestros Servicios
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 3 -->
+        <div class="hero-slide">
+            <div class="hero-content">
+                <span class="hero-pretitle">Experiencia y Profesionalismo</span>
+                <h1 class="hero-title">Expertas en Depilación Profesional</h1>
+                <p class="hero-description">
+                    Más de 10 años de experiencia ofreciendo los mejores tratamientos 
+                    de depilación con resultados visibles desde la primera sesión.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#contacto" class="gradient-btn" role="button" aria-label="Solicitar cita">
+                        <i class="fas fa-phone-alt"></i> Solicitar Cita
+                    </a>
+                    <a href="#testimonios" class="btn-outline">Ver Opiniones</a>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Sección de Servicios -->
@@ -486,10 +521,10 @@
     <script src="js/main.js"></script>
     <script src="js/contact.js"></script>
     <script src="js/animations.js"></script>
+    <script src="js/hero-slider.js"></script>
     <script src="js/testimonials-animation.js"></script>
-    
-    <!-- Bubble Button Animation -->
     <script src="js/bubble-button.js"></script>
+    
     <script>
         $(document).ready(function() {
             // Inicializar AOS si la función existe
@@ -497,7 +532,8 @@
                 AOS.init({
                     duration: 1000,
                     easing: 'ease-in-out',
-                    offset: 100
+                    offset: 100,
+                    once: true
                 });
             }
             
@@ -512,9 +548,5 @@
             }
         });
     </script>
-    <script src="js/testimonials-animation.js"></script>
-    
-    <!-- Bubble Button Animation -->
-    <script src="js/bubble-button.js"></script>
 </body>
 </html>
