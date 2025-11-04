@@ -333,24 +333,28 @@ function initGallery() {
     // Usando las imágenes disponibles
     const galleryImages = [
         { 
-            before: 'images/descarga.jpg', 
-            after: 'images/descarga (1).jpg', 
-            title: 'Depilación profesional' 
+            before: 'images/CEJA1.jpg', 
+            after: 'images/descarga.jpg', 
+            title: 'Diseño de Cejas',
+            description: 'Perfección en el diseño de cejas para realzar tu mirada'
         },
         { 
-            before: 'images/CEJA1.jpg', 
-            after: 'images/images.jpg', 
-            title: 'Perfilado de cejas' 
+            before: 'images/descarga.jpg', 
+            after: 'images/descarga (1).jpg', 
+            title: 'Depilación Láser',
+            description: 'Resultados visibles desde la primera sesión'
+        },
+        { 
+            before: 'images/descarga (1).jpg', 
+            after: 'images/CEJA1.jpg', 
+            title: 'Tratamiento Facial',
+            description: 'Rejuvenecimiento y cuidado profesional de la piel'
         },
         { 
             before: 'images/lifting-pestanas-quito-ecuador-alaska-1024x1024.webp', 
-            after: 'images/images (1).jpg', 
-            title: 'Lifting de pestañas' 
-        },
-        { 
-            before: 'images/gr1.jpeg', 
-            after: 'images/istockphoto-1460105832-612x612.jpg', 
-            title: 'Belleza y cuidado' 
+            after: 'images/images.jpg', 
+            title: 'Lifting de Pestañas',
+            description: 'Mira la diferencia con nuestro lifting de pestañas profesional'
         }
     ];
     
@@ -365,22 +369,43 @@ function initGallery() {
             const slide = document.createElement('div');
             slide.className = 'gallery-slide';
             slide.innerHTML = `
-                <div class="gallery-item">
-                    <div class="gallery-image-container">
-                        <div class="gallery-before">
-                            <img src="${image.before}" alt="Antes - ${image.title}">
-                            <span class="gallery-label">Antes</span>
-                        </div>
-                        <div class="gallery-after">
-                            <img src="${image.after}" alt="Después - ${image.title}">
-                            <span class="gallery-label">Después</span>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="${(index + 1) * 100}">
+                    <div class="gallery-img-container">
+                        <img src="${image.before}" alt="${image.title}" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>${image.title}</h3>
+                                <p>${image.description}</p>
+                            </div>
                         </div>
                     </div>
-                    <h4>${image.title}</h4>
                 </div>
             `;
             gallerySlider.appendChild(slide);
         });
+        
+        // Inicializar Slick Slider si está disponible
+        if (typeof $ !== 'undefined' && $.fn.slick) {
+            $(gallerySlider).slick({
+                dots: true,
+                infinite: true,
+                speed: 500,
+                slidesToShow: 1,
+                adaptiveHeight: true,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-chevron-left"></i></button>',
+                nextArrow: '<button type="button" class="slick-next"><i class="fas fa-chevron-right"></i></button>',
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            arrows: false
+                        }
+                    }
+                ]
+            });
+        }
     }
 }
 

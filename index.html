@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/testimonials.css">
     <link rel="stylesheet" href="css/services.css">
+    <link rel="stylesheet" href="css/gallery.css">
 </head>
 <body>
     <!-- Header y Navegación -->
@@ -297,45 +298,9 @@
                 </p>
             </div>
             
-            <div class="gallery-grid">
-                <!-- Imagen 1 -->
-                <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-                    <div class="gallery-img-container">
-                        <img src="images/CEJA1.jpg" alt="Diseño de cejas profesional" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <div class="gallery-info">
-                                <h3 style="font-size: 1.1rem; margin: 0.5rem 0 0.3rem; color: #333;">Diseño de Cejas</h3>
-                                <p>Perfección en el diseño de cejas para realzar tu mirada</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Imagen 2 -->
-                <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
-                    <div class="gallery-img-container">
-                        <img src="images/descarga.jpg" alt="Resultados de depilación láser" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <div class="gallery-info">
-                                <h3 style="font-size: 1.1rem; margin: 0.5rem 0 0.3rem; color: #333;">Depilación Láser</h3>
-                                <p>Resultados visibles desde la primera sesión</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Imagen 3 -->
-                <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
-                    <div class="gallery-img-container">
-                        <img src="images/descarga (1).jpg" alt="Tratamiento facial de rejuvenecimiento" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <div class="gallery-info">
-                                <h3 style="font-size: 1.1rem; margin: 0.5rem 0 0.3rem; color: #333;">Tratamiento Facial</h3>
-                                <p>Rejuvenecimiento y cuidado profesional de la piel</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="gallery-slider">
+                <!-- Las imágenes se cargarán dinámicamente mediante JavaScript -->
+            </div>
             </div>
         </div>
     </section>
@@ -505,21 +470,32 @@
     <!-- Scripts -->
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
-    <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- AOS (Animate On Scroll) -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
     <!-- Slick Carousel JS -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
     
     <!-- Scripts personalizados -->
     <script src="js/header.js"></script>
     <script src="js/main.js"></script>
     <script src="js/contact.js"></script>
     <script src="js/animations.js"></script>
+    <script src="js/testimonials-animation.js"></script>
+    
+    <!-- Bubble Button Animation -->
+    <script src="js/bubble-button.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Inicializar AOS si la función existe
+            if (typeof AOS !== 'undefined') {
+                AOS.init({
+                    duration: 1000,
                     easing: 'ease-in-out',
                     offset: 100
                 });
