@@ -529,6 +529,11 @@
 
 /* Mobile (max-width: 576px) */
 @media (max-width: 576px) {
+  /* Ocultar el menú de hamburguesa */
+  .menu-toggle {
+    display: none !important;
+  }
+  
   .logo-main {
     font-size: 1.3rem;
   }
@@ -539,6 +544,7 @@
   
   .nav-container {
     padding: 5rem 1.5rem 2rem;
+    display: none; /* Ocultar el menú de navegación en móviles */
   }
   
   .nav-link {
