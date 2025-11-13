@@ -30,6 +30,97 @@
     <link rel="stylesheet" href="css/services.css">
     <link rel="stylesheet" href="css/gallery.css">
     <link rel="stylesheet" href="css/hero-slider.css">
+    <style>
+        /* Estilos para centrar los íconos sociales en el footer */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin: 20px 0;
+            padding: 0 15px;
+            flex-wrap: wrap;
+        }
+        
+        /* Estilos para el footer en tablet */
+        @media (max-width: 992px) {
+            .footer-col1, .footer-col3 {
+                text-align: center !important;
+                margin: 0 auto 2rem !important;
+                width: 100% !important;
+                max-width: 500px !important;
+            }
+            
+            .footer-content {
+                flex-direction: column !important;
+                align-items: center !important;
+                text-align: center !important;
+            }
+            
+            .footer-description {
+                margin: 0 auto 1.5rem !important;
+            }
+        }
+        
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            background-color: #F6C8D5;
+            border-radius: 50%;
+            color: #0F172A;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            position: relative;
+        }
+        
+        .social-link i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            line-height: 1;
+        }
+        
+        .social-link:hover {
+            background-color: #0F172A;
+            color: #F6C8D5;
+            transform: translateY(-3px);
+        }
+        
+        /* Tablet Styles (768px and below) */
+        @media (max-width: 768px) {
+            .social-links {
+                gap: 18px;
+                margin: 18px 0;
+                padding: 0 10px;
+            }
+            
+            .social-link {
+                width: 42px;
+                height: 42px;
+                font-size: 17px;
+            }
+        }
+        
+        /* Mobile Styles (480px and below) */
+        @media (max-width: 480px) {
+            .social-links {
+                gap: 15px;
+                margin: 15px 0;
+                padding: 0 5px;
+            }
+            
+            .social-link {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+        }
+    </style>
     
     <!-- Slick Carousel JS -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -47,6 +138,24 @@
                         <span class="logo-sub">DEPILACIÓN</span>
                     </div>
                 </a>
+
+                <!-- Hamburger Menu Button -->
+                <button class="hamburger" aria-label="Menú" aria-expanded="false" aria-controls="mobile-menu">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </button>
+
+                <!-- Mobile Menu Overlay -->
+                <div class="mobile-menu-overlay" id="mobile-menu">
+                    <nav class="mobile-nav">
+                        <a href="#inicio" class="mobile-nav-link">Inicio</a>
+                        <a href="#servicios" class="mobile-nav-link">Servicios</a>
+                        <a href="#galeria" class="mobile-nav-link">Galería</a>
+                        <a href="#testimonios" class="mobile-nav-link">Testimonios</a>
+                        <a href="#contacto" class="mobile-nav-link">Contacto</a>
+                    </nav>
+                </div>
 
                 <!-- Menú Hamburguesa -->
                 <button class="menu-toggle" aria-label="Menú" aria-expanded="false" aria-controls="main-navigation">
@@ -142,24 +251,24 @@
             </div>
             
             <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.2rem; padding: 0.5rem 0;">
-                <!-- Servicio 1 -->
-                <div class="service-card left-card" style="background: white; border-radius: 8px; padding: 0.9rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); height: 100%; display: flex; flex-direction: column; transition: transform 1s ease-out, box-shadow 0.5s ease, opacity 1s ease; transform: translateX(-100px); opacity: 0;" onmouseover="this.style.transform='translateX(0) translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateX(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.05)'" data-aos="fade-right" data-aos-duration="1200" data-aos-delay="200">
+                <!-- Servicio 6 - Depilación -->
+                <div class="service-card left-card" style="background: white; border-radius: 8px; padding: 0.9rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); height: 100%; display: flex; flex-direction: column; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.05)'" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
                     <div class="service-icon">
-                        <i class="fas fa-eye"></i>
+                        <i class="fas fa-fire"></i>
                     </div>
-                    <h3 style="font-size: 1.1rem; margin: 0.5rem 0 0.3rem; color: #333;">Diseño de Cejas</h3>
-                    <p class="service-description" style="font-size: 0.8rem; color: #666; margin: 0.2rem 0 0.6rem; line-height: 1.4; flex-grow: 1;">Perfilado profesional de cejas que realza tu mirada según la estructura de tu rostro. Incluye diseño, depilación con cera y pinza, y tinte opcional.</p>
+                    <h3 style="font-size: 1.1rem; margin: 0.5rem 0 0.3rem; color: #333;">Depilación Profesional</h3>
+                    <p class="service-description" style="font-size: 0.8rem; color: #666; margin: 0.2rem 0 0.6rem; line-height: 1.4; flex-grow: 1;">Servicio de depilación con cera de alta calidad para una piel suave y sin vello. Técnicas profesionales para minimizar molestias y obtener resultados duraderos.</p>
                     <div class="service-features" style="margin: 0.5rem 0;">
-                        <p style="margin: 0.2rem 0; font-size: 0.8rem;"><i class="fas fa-check" style="margin-right: 0.3rem; color: #4CAF50; font-size: 0.7rem;"></i> Diseño personalizado</p>
-                        <p style="margin: 0.2rem 0; font-size: 0.8rem;"><i class="fas fa-check" style="margin-right: 0.3rem; color: #4CAF50; font-size: 0.7rem;"></i> Tinte opcional</p>
-                        <p style="margin: 0.2rem 0; font-size: 0.8rem;"><i class="fas fa-check" style="margin-right: 0.3rem; color: #4CAF50; font-size: 0.7rem;"></i> Duración 30 min</p>
+                        <p style="margin: 0.2rem 0; font-size: 0.8rem;"><i class="fas fa-check" style="margin-right: 0.3rem; color: #4CAF50; font-size: 0.7rem;"></i> Cera hipoalergénica</p>
+                        <p style="margin: 0.2rem 0; font-size: 0.8rem;"><i class="fas fa-check" style="margin-right: 0.3rem; color: #4CAF50; font-size: 0.7rem;"></i> Piel suave por más tiempo</p>
+                        <p style="margin: 0.2rem 0; font-size: 0.8rem;"><i class="fas fa-check" style="margin-right: 0.3rem; color: #4CAF50; font-size: 0.7rem;"></i> Resultados duraderos</p>
                     </div>
                     <div class="service-price" style="margin: 0.5rem 0 0.8rem; padding-top: 0.5rem; border-top: 1px dashed #eee;">
                         <span>Desde</span>
-                        <span class="price">$15.000</span>
-                        <span class="price-note">sesión</span>
+                        <span class="price">$10.000</span>
+                        <span class="price-note">por zona</span>
                     </div>
-                    <a href="#contacto" class="btn-service" style="display: inline-block; width: 100%; text-align: center; padding: 0.5rem; background: #ff6b6b; color: white; text-decoration: none; border-radius: 4px; margin-top: auto; font-size: 0.85rem; transition: all 0.2s ease; font-weight: 500;" onmouseover="this.style.background='#ff5252'" onmouseout="this.style.background='#ff6b6b'"
+                    <a href="#contacto" class="btn-service" style="display: inline-block; width: 100%; text-align: center; padding: 0.5rem; background: #ff6b6b; color: white; text-decoration: none; border-radius: 4px; margin-top: auto; font-size: 0.85rem; transition: all 0.2s ease; font-weight: 500;" onmouseover="this.style.background='#ff5252'" onmouseout="this.style.background='#ff6b6b'">
                         <i class="fas fa-calendar-alt" style="margin-right: 5px;"></i> Reservar Cita
                     </a>
                 </div>
@@ -167,7 +276,9 @@
                 <!-- Servicio 3 -->
                 <div class="service-card left-card" style="background: white; border-radius: 8px; padding: 0.9rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); height: 100%; display: flex; flex-direction: column; transition: transform 1s ease-out, box-shadow 0.5s ease, opacity 1s ease; transform: translateX(-100px); opacity: 0;" onmouseover="this.style.transform='translateX(0) translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateX(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.05)'" data-aos="fade-right" data-aos-duration="1200" data-aos-delay="300">
                     <div class="service-icon">
-                        <i class="fas fa-eye-lashes"></i>
+                        <i class="fas fa-eye" style="position: relative;">
+                            <i class="fas fa-arrow-up" style="position: absolute; font-size: 0.6em; bottom: -5px; right: -5px; color: #ff6b6b; background: white; border-radius: 50%; padding: 2px; border: 1px solid #ff6b6b;"></i>
+                        </i>
                     </div>
                     <h3 style="font-size: 1.1rem; margin: 0.5rem 0 0.3rem; color: #333;">Lifting de Pestañas</h3>
                     <p class="service-description" style="font-size: 0.8rem; color: #666; margin: 0.2rem 0 0.6rem; line-height: 1.4; flex-grow: 1;">Realza la mirada con un efecto de pestañas más largas y curvadas sin necesidad de extensiones. Resultado natural que dura entre 6-8 semanas.</p>
@@ -232,6 +343,32 @@
                     </a>
                 </div>
                 
+                
+            </div>
+            
+            <!-- Fila central con un solo servicio: Diseño de Cejas -->
+            <div class="services-grid" style="display: flex; justify-content: center; margin-top: 1.2rem;">
+                <!-- Servicio 1 - Diseño de Cejas -->
+                <div class="service-card" style="background: white; border-radius: 8px; padding: 0.9rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); height: 100%; display: flex; flex-direction: column; transition: all 0.3s ease; max-width: 300px; margin: 0 auto;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.05)'" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3 style="font-size: 1.1rem; margin: 0.5rem 0 0.3rem; color: #333;">Diseño de Cejas</h3>
+                    <p class="service-description" style="font-size: 0.8rem; color: #666; margin: 0.2rem 0 0.6rem; line-height: 1.4; flex-grow: 1;">Perfilado profesional de cejas que realza tu mirada según la estructura de tu rostro. Incluye diseño, depilación con cera y pinza, y tinte opcional.</p>
+                    <div class="service-features" style="margin: 0.5rem 0;">
+                        <p style="margin: 0.2rem 0; font-size: 0.8rem;"><i class="fas fa-check" style="margin-right: 0.3rem; color: #4CAF50; font-size: 0.7rem;"></i> Diseño personalizado</p>
+                        <p style="margin: 0.2rem 0; font-size: 0.8rem;"><i class="fas fa-check" style="margin-right: 0.3rem; color: #4CAF50; font-size: 0.7rem;"></i> Tinte opcional</p>
+                        <p style="margin: 0.2rem 0; font-size: 0.8rem;"><i class="fas fa-check" style="margin-right: 0.3rem; color: #4CAF50; font-size: 0.7rem;"></i> Duración 30 min</p>
+                    </div>
+                    <div class="service-price" style="margin: 0.5rem 0 0.8rem; padding-top: 0.5rem; border-top: 1px dashed #eee;">
+                        <span>Desde</span>
+                        <span class="price">$15.000</span>
+                        <span class="price-note">sesión</span>
+                    </div>
+                    <a href="#contacto" class="btn-service" style="display: inline-block; width: 100%; text-align: center; padding: 0.5rem; background: #ff6b6b; color: white; text-decoration: none; border-radius: 4px; margin-top: auto; font-size: 0.85rem; transition: all 0.2s ease; font-weight: 500;" onmouseover="this.style.background='#ff5252'" onmouseout="this.style.background='#ff6b6b'">
+                        <i class="fas fa-calendar-alt" style="margin-right: 5px;"></i> Reservar Cita
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -465,26 +602,30 @@
     </section>
 
     <!-- Footer -->
-    <footer id="footer" class="footer">
-        <div class="footer-content">
-            <div class="footer-col footer-col1">
-                <h3 style="color: #F6C8D5;">Soft Little Depilación</h3>
-                <p class="footer-description">Centro especializado en depilación láser y tratamientos estéticos profesionales. Ofrecemos tecnología de punta y atención personalizada con profesionales certificados para resultados visibles desde la primera sesión.</p>
-                <div class="social-links">
+    <footer id="footer" class="footer" style="text-align: center;">
+        <div class="footer-content" style="display: flex; flex-direction: column; align-items: center; max-width: 100%;">
+            <div class="footer-col footer-col1" style="width: 100%; max-width: 500px; margin: 0 auto 2rem; border-left: none;">
+                <div style="margin-bottom: 1.5rem; text-align: center;">
+                    <h3 style="color: #F6C8D5; margin: 0 0 0.8rem 0;">Soft Little Depilación</h3>
+                    <div style="width: 60px; height: 3px; background-color: #F6C8D5; margin: 0 auto;"></div>
+                </div>
+                <p class="footer-description" style="margin: 0 auto 1.5rem; line-height: 1.5; max-width: 300px;">Especialistas en depilación y belleza con resultados profesionales y atención personalizada.</p>
+                <div class="social-links" style="margin-bottom: 2rem;">
                     <a href="#" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
                     <a href="https://wa.me/569XXXXXXXX" target="_blank" class="social-link"><i class="fab fa-whatsapp"></i></a>
                 </div>
-                <p class="copyright">&copy; 2025 Soft Little Depilación. Todos los derechos reservados.</p>
             </div>
-            <div class="footer-col footer-col3">
-                <h4 style="color: #F6C8D5;">Contacto</h4>
-                <p><i class="fas fa-map-marker-alt"></i> Rudecindo Ortega, Providencia</p>
-                <p><i class="fas fa-phone-alt"></i> +56 9 XXXX XXXX</p>
-                <p><i class="far fa-envelope"></i> contacto@softlittledepilacion.cl</p>
+            <div class="footer-col footer-col3" style="width: 100%; max-width: 300px; margin: 0 auto 2rem;">
+                <h4 style="color: #F6C8D5; margin-bottom: 1.5rem;">Contacto</h4>
+                <p style="margin: 0.5rem 0;"><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i>Rudecindo Ortega, Providencia</p>
+                <p style="margin: 0.5rem 0;"><i class="fas fa-phone-alt" style="margin-right: 10px;"></i>+56 9 XXXX XXXX</p>
+                <p style="margin: 0.5rem 0 1.5rem;"><i class="far fa-envelope" style="margin-right: 10px;"></i>contacto@softlittledepilacion.cl</p>
+            </div>
+            <div style="width: 100%; padding-top: 1.5rem; margin-top: 1rem;">
+                <p class="copyright" style="margin: 0; font-size: 0.9rem; color: rgba(255,255,255,0.7);">&copy; 2025 Soft Little Depilación. Todos los derechos reservados.</p>
             </div>
         </div>
-        <div class="footer-backdrop"></div>
     </footer>
 
     <!-- Botón de WhatsApp flotante -->
@@ -509,6 +650,7 @@
     
     <!-- Scripts personalizados -->
     <script src="js/header.js"></script>
+    <script src="js/mobile-menu.js"></script>
     <script src="js/main.js"></script>
     <script src="js/contact.js"></script>
     <script src="js/animations.js"></script>
