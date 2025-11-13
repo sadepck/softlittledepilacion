@@ -1,9 +1,234 @@
 /* Estilos para la sección de contacto */
 .contact-section {
     padding: 80px 0;
-    background-color: #f9f9f9;
+    background-color: #fff;
     position: relative;
     overflow: hidden;
+}
+
+/* Contenedor principal */
+.contact-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Estilos para el botón de WhatsApp destacado */
+.whatsapp-cta {
+    text-align: center;
+    margin: 30px 0 50px;
+}
+
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #25D366;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(37, 211, 102, 0.3);
+    margin-bottom: 15px;
+}
+
+.whatsapp-btn i {
+    font-size: 1.4rem;
+    margin-right: 10px;
+}
+
+.whatsapp-btn:hover {
+    background: #128C7E;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-number {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #075E54;
+    margin: 10px 0 0;
+}
+
+/* Estilos para la cuadrícula de información de contacto */
+.contact-info {
+    background: #fff;
+    border-radius: 15px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    margin-top: 20px;
+}
+
+.contact-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.whatsapp-panel {
+    flex: 0 0 100%;
+    width: 100%;
+    padding: 30px 15px;
+    box-sizing: border-box;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-slide-container.show-whatsapp .whatsapp-panel {
+    transform: translateX(0);
+    position: relative;
+}
+
+.whatsapp-content {
+    max-width: 100%;
+    width: 100%;
+}
+
+.whatsapp-icon {
+    font-size: 4rem;
+    color: #25D366;
+    margin-bottom: 20px;
+}
+
+.whatsapp-panel h3 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.whatsapp-panel p {
+    color: #555;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.whatsapp-number {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #075E54;
+    margin: 15px 0;
+}
+
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #25D366;
+    color: white;
+    padding: 14px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 25px 0;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-btn i {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.whatsapp-btn:hover {
+    background-color: #128C7E;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+.slide-indicator {
+    display: flex;
+    justify-content: center;
+    margin: 25px 0 15px;
+    gap: 12px;
+    padding: 0 15px;
+}
+
+.slide-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    padding: 0;
+    outline: none;
+}
+
+.slide-dot.active {
+    background-color: #ff6b6b;
+    transform: scale(1.2);
+}
+
+/* Botones de navegación */
+.show-form-btn {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 25px auto 0;
+    padding: 14px 20px;
+    background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.show-form-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
+.show-form-btn i {
+    margin-right: 8px;
+}
+
+.back-to-info {
+    display: inline-flex;
+    align-items: center;
+    background: none;
+    border: none;
+    color: #ff6b6b;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0 0 20px;
+    padding: 8px 12px 8px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.back-to-info:hover {
+    color: #ff4757;
+    background-color: rgba(255, 107, 107, 0.1);
+}
+
+.back-to-info i {
+    margin-right: 6px;
+    font-size: 0.9em;
 }
 
 .contact-section .section-header {
@@ -231,10 +456,113 @@ select.form-control {
     background: linear-gradient(135deg, #ff5a5a, #ff7b7b);
 }
 
-/* Estilos para los enlaces sociales */
-.social-contact .social-links {
+/* WhatsApp Button Styles */
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #25D366;
+    color: white;
+    padding: 14px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 20px 0;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-btn i {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.whatsapp-btn:hover {
+    background-color: #128C7E;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    color: white;
+    animation: none;
+}
+
+/* Contact Direct Section */
+.contact-direct {
+    text-align: center;
+    margin: 30px 0;
+    padding: 25px 15px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    border: 1px solid #eee;
+}
+
+.contact-direct h4 {
+    color: #333;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.whatsapp-number {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #075E54;
+    margin: 15px 0;
+    display: block;
+}
+
+.contact-hours {
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+/* Social Contact Styles */
+.social-contact {
+    margin-top: 50px;
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.social-contact h4 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.social-links {
     display: flex;
-    gap: 15px;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff;
+    color: #ff6b8b;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.social-link:hover {
+    background-color: #ff6b8b;
+    color: white;
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 8px 20px rgba(255, 107, 139, 0.3);
+}
+
+/* Estilos responsivos */
     margin-top: 10px;
 }
 
@@ -300,6 +628,74 @@ select.form-control {
     }
 }
 
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 40px 0;
+    }
+    
+    .contact-container {
+        padding: 0 15px;
+    }
+    
+    .contact-slide-container {
+        border-radius: 12px;
+        background: white;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+        padding: 20px 0;
+    }
+    
+    .contact-info {
+        padding: 0 15px;
+        box-shadow: none;
+    }
+    
+    .contact-info-item {
+        padding: 12px 0;
+        border-bottom: 1px solid #f0f0f0;
+        margin: 0;
+    }
+    
+    .contact-info-item:last-child {
+        border-bottom: none;
+    }
+    
+    .contact-form-wrapper {
+        padding: 0 15px;
+    }
+    
+    .form-group {
+        margin-bottom: 18px;
+    }
+    
+    .form-control {
+        font-size: 15px;
+        padding: 14px 45px 14px 15px;
+        height: 52px;
+    }
+    
+    textarea.form-control {
+        min-height: 130px;
+        padding: 15px;
+    }
+    
+    .btn-submit {
+        width: 100%;
+        padding: 14px 20px;
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+    
+    .social-links {
+        justify-content: center;
+        margin: 20px 0 10px;
+    }
+    
+    .slide-indicator {
+        margin: 25px 0 10px;
+    }
+}
+
 @media (max-width: 480px) {
     .contact-section {
         padding: 50px 0;
@@ -317,5 +713,9 @@ select.form-control {
     .btn-submit {
         width: 100%;
         padding: 12px 20px;
+    }
+    
+    .contact-info-item {
+        padding: 10px 0;
     }
 }
