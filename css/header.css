@@ -1,4 +1,4 @@
-/* ===== HEADER STYLES ===== */
+﻿/* ===== HEADER STYLES ===== */
 .header {
   position: fixed;
   top: 0;
@@ -246,7 +246,7 @@
   width: 100%;
 }
 
-/* ===== BOTÓN DE BURBUJAS MEJORADO ===== */
+/* ===== BOTÃ“N DE BURBUJAS MEJORADO ===== */
 .contact-wrapper {
   display: flex;
   align-items: center;
@@ -258,8 +258,8 @@
 
 .bubble-button {
   --button-primary: #F6C8D5; /* Rosa suave */
-  --button-hover: #E8B8C8; /* Rosa ligeramente más oscuro */
-  --button-active: #DAA8B8; /* Rosa más oscuro para estado activo */
+  --button-hover: #E8B8C8; /* Rosa ligeramente mÃ¡s oscuro */
+  --button-active: #DAA8B8; /* Rosa mÃ¡s oscuro para estado activo */
   --text-color: #5A2D4D; /* Morado oscuro para el texto */
   --bubble-color-1: rgba(255, 255, 255, 0.8);
   --bubble-color-2: rgba(255, 230, 240, 0.7);
@@ -314,7 +314,7 @@
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Texto del botón */
+/* Texto del botÃ³n */
 .bubble-button__text {
   position: relative;
   z-index: 2;
@@ -324,7 +324,7 @@
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-/* Efecto de brillo al pasar el ratón */
+/* Efecto de brillo al pasar el ratÃ³n */
 .bubble-button::before {
   content: '';
   position: absolute;
@@ -343,7 +343,7 @@
   transform: skewX(-20deg);
 }
 
-/* Efecto de sombra al pasar el ratón */
+/* Efecto de sombra al pasar el ratÃ³n */
 .bubble-button::after {
   content: '';
   position: absolute;
@@ -440,7 +440,7 @@
   outline-offset: 3px;
 }
 
-/* Desactivar animaciones en dispositivos táctiles */
+/* Desactivar animaciones en dispositivos tÃ¡ctiles */
 @media (hover: none) {
   .bubble-button {
     transform: none !important;
@@ -452,7 +452,7 @@
   }
 }
 
-/* Efecto de brillo al pasar el ratón */
+/* Efecto de brillo al pasar el ratÃ³n */
 .contact-button::before {
   content: '';
   position: absolute;
@@ -601,14 +601,42 @@
 
 /* Desktop (min-width: 993px) */
 @media (min-width: 993px) {
-  .menu-toggle {
-    display: none;
+    .menu-toggle {
+      display: none;
+    }
+
+    .menu-overlay {
+      display: none;
+    }
+
+    .nav-container {
+      display: flex !important;
+      position: static;
+      background: transparent;
+      transform: none;
+      padding: 0;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex !important;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-link {
+      color: var(--text-primary);
+      font-weight: 500;
+      padding: 0.5rem 0;
+      transition: color 0.2s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link:focus {
+      color: var(--color-accent);
+    }
   }
-  
-  .menu-overlay {
-    display: none;
-  }
-}
 
 /* Tablet (max-width: 992px) and Mobile */
 /* Mobile Menu Toggle */
@@ -683,7 +711,7 @@
   
   .nav-container {
     padding: 5rem 1.5rem 2rem;
-    display: none; /* Ocultar el menú de navegación en móviles */
+    display: none; /* Ocultar el menÃº de navegaciÃ³n en mÃ³viles */
   }
   
   .nav-link {
@@ -717,3 +745,7 @@
     padding: 5rem 1.25rem 2rem;
   }
 }
+
+
+
+

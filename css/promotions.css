@@ -1,0 +1,191 @@
+/* Promociones Section Styles */
+.promotions {
+    background: linear-gradient(135deg, #ffeef8 0%, #fff5f8 100%);
+    padding: 4rem 0;
+    position: relative;
+}
+
+.promotions::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23ff6b6b" opacity="0.03"/><circle cx="75" cy="75" r="1" fill="%23ff6b6b" opacity="0.03"/><circle cx="50" cy="10" r="0.5" fill="%23ff6b6b" opacity="0.02"/><circle cx="10" cy="50" r="0.5" fill="%23ff6b6b" opacity="0.02"/><circle cx="90" cy="30" r="0.5" fill="%23ff6b6b" opacity="0.02"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.5;
+}
+
+.promotions .container {
+    position: relative;
+    z-index: 1;
+}
+
+.promo-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.promo-header .section-subtitle {
+    display: block;
+    color: #ff6b6b;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.promo-header h2 {
+    font-size: 2.5rem;
+    margin: 0 0 1rem;
+    color: #333;
+    font-weight: 700;
+}
+
+.promo-header .section-description {
+    max-width: 600px;
+    margin: 0 auto;
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.promo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.promo-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.1);
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.promo-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(255, 107, 107, 0.2);
+}
+
+.promo-card .badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    z-index: 2;
+    box-shadow: 0 4px 10px rgba(255, 107, 107, 0.3);
+}
+
+.promo-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.promo-card:hover .promo-image {
+    transform: scale(1.05);
+}
+
+.promo-content {
+    padding: 1.5rem;
+}
+
+.promo-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 0.5rem;
+}
+
+.promo-description {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.promo-cta {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.promo-cta:hover {
+    background: linear-gradient(135deg, #ff5252, #ff6b6b);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .promotions {
+        padding: 3rem 0;
+    }
+    
+    .promo-header h2 {
+        font-size: 2rem;
+    }
+    
+    .promo-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .promo-image {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .promotions {
+        padding: 2rem 0;
+    }
+    
+    .promo-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .promo-content {
+        padding: 1rem;
+    }
+}
+
+/* Animation for cards */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.promo-card {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.promo-card:nth-child(1) { animation-delay: 0.1s; }
+.promo-card:nth-child(2) { animation-delay: 0.2s; }
+.promo-card:nth-child(3) { animation-delay: 0.3s; }
+.promo-card:nth-child(4) { animation-delay: 0.4s; }

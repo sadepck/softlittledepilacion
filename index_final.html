@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="css/promotions.css">
     <link rel="stylesheet" href="css/modal.css">
     <style>
-        /* Estilos para centrar los íconos sociales en el footer */
+        /* Estilos para centrar los Ã­conos sociales en el footer */
         .social-links {
             display: flex;
             justify-content: center;
@@ -44,177 +44,6 @@
             flex-wrap: wrap;
         }
         
-        /* Estilos para el logo */
-        .logo-image {
-            height: auto;
-            width: auto;
-            max-width: 100%;
-            max-height: 180px;
-            min-height: 90px;
-            display: block;
-            object-fit: contain;
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: crisp-edges;
-            image-rendering: pixelated;
-            backface-visibility: hidden;
-            transform: translateZ(0);
-            -webkit-transform: translateZ(0);
-            -webkit-font-smoothing: antialiased;
-        }
-        
-        /* Estilos para fondo de hero section */
-        .hero-slider {
-            background-image: url('images/fondo2.jpeg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            position: relative;
-        }
-        
-        .hero-slider::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.15);
-            z-index: 1;
-        }
-        
-        .hero-slide {
-            position: relative;
-            z-index: 2;
-        }
-        
-        /* Mejorar visibilidad del contenido hero */
-        .hero-pretitle {
-            color: #000000 !important;
-            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8) !important;
-            font-weight: 600 !important;
-            letter-spacing: 2px !important;
-        }
-        
-        .hero-title {
-            color: #000000 !important;
-            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8) !important;
-            font-weight: 700 !important;
-            line-height: 1.2 !important;
-        }
-        
-        .hero-description {
-            color: #000000 !important;
-            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8) !important;
-            font-weight: 300 !important;
-            max-width: 600px !important;
-        }
-        
-        .cta-buttons .gradient-btn,
-        .cta-buttons .btn-outline {
-            text-shadow: none !important;
-            font-weight: 400 !important;
-            border: 2px solid !important;
-        }
-        
-        .cta-buttons .btn-outline {
-            background-color: rgba(255, 255, 255, 1) !important;
-            color: #0F172A !important;
-            border-color: #ffffff !important;
-        }
-        
-        .cta-buttons .gradient-btn:hover,
-        .cta-buttons .btn-outline:hover {
-            transform: translateY(-2px) !important;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
-        }
-        
-        @media (max-width: 768px) {
-            .logo-image {
-                max-height: 140px;
-                min-height: 70px;
-            }
-            
-            .hero-slider {
-                background-attachment: scroll;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .logo-image {
-                max-height: 110px;
-                min-height: 55px;
-            }
-            
-            /* Remove white space and ensure full screen on mobile */
-            html, body {
-                overflow-x: hidden !important;
-                width: 100% !important;
-                min-height: 100vh !important;
-                margin: 0 !important;
-                padding: 0 !important;
-            }
-            
-            * {
-                box-sizing: border-box !important;
-            }
-            
-            /* Remove margins and padding from sections */
-            section {
-                padding: 2rem 0 !important;
-                margin: 0 !important;
-                width: 100% !important;
-            }
-            
-            /* Container adjustments */
-            .container {
-                padding: 0 1rem !important;
-                max-width: 100% !important;
-                width: 100% !important;
-                margin: 0 auto !important;
-            }
-            
-            /* Hero section adjustments */
-            .hero-slider {
-                min-height: 100vh !important;
-                margin: 0 !important;
-                padding: 0 !important;
-            }
-            
-            /* Remove overflow issues */
-            .valores-grid {
-                grid-template-columns: 1fr !important;
-                gap: 1rem !important;
-                margin: 0 !important;
-            }
-            
-            .valor-card {
-                margin: 0 !important;
-                width: 100% !important;
-            }
-            
-            .valor-image-container {
-                height: 300px !important;
-            }
-            
-            /* Footer adjustments */
-            .footer {
-                margin: 0 !important;
-                padding: 2rem 0 1rem !important;
-            }
-            
-            .footer-content {
-                padding: 0 1rem !important;
-            }
-            
-            /* Modal adjustments for mobile */
-            .image-modal .modal-content {
-                max-width: 95% !important;
-                max-height: 85% !important;
-                margin: 0 !important;
-            }
-        }
-        
         /* Estilos para el footer en tablet */
         @media (max-width: 992px) {
             .footer-col1, .footer-col3 {
@@ -222,60 +51,6 @@
                 margin: 0 auto 2rem !important;
                 width: 100% !important;
                 max-width: 500px !important;
-            }
-            
-            /* Remove white space on tablets */
-            html, body {
-                overflow-x: hidden !important;
-                width: 100% !important;
-                margin: 0 !important;
-                padding: 0 !important;
-            }
-            
-            section {
-                padding: 2.5rem 0 !important;
-                margin: 0 !important;
-                width: 100% !important;
-            }
-            
-            .container {
-                padding: 0 1.5rem !important;
-                max-width: 100% !important;
-                width: 100% !important;
-            }
-            
-            .valores-grid {
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
-                gap: 1.5rem !important;
-            }
-        }
-        
-        /* Additional mobile fixes */
-        @media (max-width: 768px) {
-            html, body {
-                overflow-x: hidden !important;
-                width: 100% !important;
-                margin: 0 !important;
-                padding: 0 !important;
-            }
-            
-            section {
-                padding: 2rem 0 !important;
-                margin: 0 !important;
-            }
-            
-            .container {
-                padding: 0 1rem !important;
-                max-width: 100% !important;
-            }
-            
-            .valores-grid {
-                grid-template-columns: 1fr !important;
-                gap: 1rem !important;
-            }
-            
-            .valor-image-container {
-                height: 350px !important;
             }
             
             .footer-content {
@@ -360,7 +135,10 @@
             <nav class="navbar" aria-label="NavegaciÃ³n principal">
                 <!-- Logo -->
                 <a href="#inicio" class="logo" aria-label="Inicio - Soft Little Depilación">
-                    <img src="images/logo.jpeg" alt="Soft Little Depilación" class="logo-image">
+                    <div class="logo-text">
+                        <span class="logo-main">Soft Little</span>
+                        <span class="logo-sub">DEPILACIÃ“N</span>
+                    </div>
                 </a>
 
                 <!-- Hamburger Menu Button -->
@@ -373,9 +151,8 @@
                 <!-- Mobile Menu Overlay -->
                 <div class="mobile-menu-overlay" id="mobile-menu">
                     <nav class="mobile-nav">
-                        <a href="#valores" class="mobile-nav-link">Valores</a>
                         <a href="#inicio" class="mobile-nav-link">Inicio</a>
-                        <a href="#servicios" class="mobile-nav-link">Servicio</a>
+                        <a href="#servicios" class="mobile-nav-link">Servicios</a>
                         <a href="#promociones" class="mobile-nav-link">Promociones</a>
                         <a href="#galeria" class="mobile-nav-link">Galería</a>
                         <a href="#testimonios" class="mobile-nav-link">Testimonios</a>
@@ -393,9 +170,8 @@
                 <!-- MenÃº de NavegaciÃ³n -->
                 <div class="nav-container" id="main-navigation">
                     <ul class="nav-links" role="menubar">
-                        <li role="none"><a href="#valores" class="nav-link" role="menuitem">Valores</a></li>
                         <li role="none"><a href="#inicio" class="nav-link" role="menuitem">Inicio</a></li>
-                        <li role="none"><a href="#servicios" class="nav-link" role="menuitem">Servicio</a></li>
+                        <li role="none"><a href="#servicios" class="nav-link" role="menuitem">Servicios</a></li>
                         <li role="none"><a href="#promociones" class="nav-link" role="menuitem">Promociones</a></li>
                         <li role="none"><a href="#galeria" class="nav-link" role="menuitem">Galería</a></li>
                         <li role="none"><a href="#testimonios" class="nav-link" role="menuitem">Testimonios</a></li>
@@ -421,8 +197,8 @@
                 <span class="hero-pretitle">Belleza y Bienestar</span>
                 <h1 class="hero-title">Tu Belleza Natural en las Mejores Manos</h1>
                 <p class="hero-description">
-                    Descubre la excelencia en tratamientos estéticos personalizados. 
-                    tecnología avanzada y atención experta para realzar tu belleza natural.
+                    Descubre la excelencia en tratamientos estÃ©ticos personalizados. 
+                    tecnologíaÃ­a avanzada y atenciÃ³n experta para realzar tu belleza natural.
                 </p>
                 <div class="cta-buttons">
                     <a href="#contacto" class="gradient-btn" role="button" aria-label="Reserva tu consulta">
@@ -436,15 +212,15 @@
         <!-- Slide 2 -->
         <div class="hero-slide">
             <div class="hero-content">
-                <span class="hero-pretitle">Tecnología Avanzada</span>
+                <span class="hero-pretitle">tecnologíaÃ­a Avanzada</span>
                 <h1 class="hero-title">Resultados que Marcan la Diferencia</h1>
                 <p class="hero-description">
-                    Equipamiento de última generación para ofrecerte los mejores resultados 
-                    en depilación y tratamientos estéticos.
+                    Equipamiento de Ãºúltima generaciÃ³n para ofrecerte los mejores resultados 
+                    en depilaciÃ³n y tratamientos estÃ©ticos.
                 </p>
                 <div class="cta-buttons">
                     <a href="#servicios" class="gradient-btn" role="button" aria-label="Nuestros servicios">
-                        <i class="fas fa-spa"></i> Nuestro Servicio
+                        <i class="fas fa-spa"></i> Nuestros Servicios
                     </a>
                 </div>
             </div>
@@ -456,7 +232,7 @@
                 <span class="hero-pretitle">Experiencia y Profesionalismo</span>
                 <h1 class="hero-title">Expertas en Depilación Profesional</h1>
                 <p class="hero-description">
-                    Más de 10 años de experiencia ofreciendo los mejores tratamientos 
+                    MÃ¡s de 10 aÃ±os de experiencia ofreciendo los mejores tratamientos 
                     de depilación con resultados visibles desde la primera sesión.
                 </p>
                 <div class="cta-buttons">
@@ -494,49 +270,32 @@
                     <img src="images/promo 2_web.jpeg" alt="Promoción Facial" class="promo-image">
                     <div class="promo-content">
                         <h3 class="promo-title">Tratamiento Facial</h3>
-                        <p class="promo-description">Depilación facial completa con tecnología avanzada y sesión de hidratación post-tratamiento.</p>
+                        <p class="promo-description">Depilación facial completa con tecnologíaía avanzada y sesión de hidratación post-tratamiento.</p>
 <a href="#contacto" class="promo-cta" onclick="event.stopPropagation()">Reservar Ahora</a>
                     </div>
                 </div>
                 
-                </div>
-        </div>
-    </section>
-
-    <!-- Sección de Valores -->
-    <section id="valores" class="valores" style="padding: 4rem 0; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
-        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
-            <div class="section-header" data-aos="fade-up" style="text-align: center; margin-bottom: 3rem;">
-                <span class="section-subtitle" style="display: block; color: #ff6b6b; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px;">Valores</span>
-                <h2 style="font-size: 2.5rem; margin: 0 0 1rem; color: #333;">Precios y Promociones</h2>
-                <p class="section-description" style="max-width: 700px; margin: 0 auto; color: #666; font-size: 1rem; line-height: 1.6;">Conoce nuestros precios especiales y promociones exclusivas para todos nuestros tratamientos.</p>
-            </div>
-            
-            <div class="valores-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
-                <!-- Valor 1 -->
-                <div class="valor-card" data-aos="fade-up" data-aos-delay="100" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                    <div class="valor-image-container" style="position: relative; height: 400px; overflow: hidden; cursor: pointer;" onclick="openModal('images/promo 3_web.jpeg')">
-                        <img src="images/promo 3_web.jpeg" alt="Precios Especiales" class="valor-image" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
-                    </div>
-                    <div class="valor-content" style="padding: 2rem; text-align: center;">
-                        <a href="#contacto" class="valor-btn" style="display: inline-block; background: linear-gradient(135deg, #ff6b6b, #ff5252); color: white; padding: 1rem 2rem; border-radius: 30px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; text-align: center;">Consultar Hora</a>
+                <!-- Promoción 3 -->
+                <div class="promo-card" data-aos="fade-up" data-aos-delay="300">
+                    <span class="badge">-40%</span>
+                    <img src="images/promo 3_web.jpeg" alt="Promoción Corporal" class="promo-image">
+                    <div class="promo-content">
+                        <h3 class="promo-title">Zonas Corporales</h3>
+                        <p class="promo-description">Tratamiento para piernas completas y brazos con tecnologíaía láser de úúltima generación.</p>
+<a href="#contacto" class="promo-cta" onclick="event.stopPropagation()">Reservar Ahora</a>
                     </div>
                 </div>
                 
-                <!-- Valor 2 -->
-                <div class="valor-card" data-aos="fade-up" data-aos-delay="200" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                    <div class="valor-image-container" style="position: relative; height: 400px; overflow: hidden; cursor: pointer;" onclick="openModal('images/promo 4_web.jpeg')">
-                        <img src="images/promo 4_web.jpeg" alt="Promociones Express" class="valor-image" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
-                    </div>
-                    <div class="valor-content" style="padding: 2rem; text-align: center;">
-                        <a href="#contacto" class="valor-btn" style="display: inline-block; background: linear-gradient(135deg, #4CAF50, #45a049); color: white; padding: 1rem 2rem; border-radius: 30px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; text-align: center;">Reservar Hora</a>
+                <!-- Promoción 4 -->
+                <div class="promo-card" data-aos="fade-up" data-aos-delay="400">
+                    <span class="badge">-20%</span>
+                    <img src="images/promo 4_web.jpeg" alt="Promoción Express" class="promo-image">
+                    <div class="promo-content">
+                        <h3 class="promo-title">Sesión Express</h3>
+                        <p class="promo-description">Tratamiento rápido para zonas pequeñas con resultados inmediatos y duraderos.</p>
+<a href="#contacto" class="promo-cta" onclick="event.stopPropagation()">Reservar Ahora</a>
                     </div>
                 </div>
-            </div>
-            
-            <div class="valores-cta" data-aos="fade-up" style="text-align: center; margin-top: 3rem;">
-                <p style="color: #666; margin-bottom: 1.5rem; font-size: 1.1rem;">¿Tienes preguntas sobre nuestros precios?</p>
-                <a href="#contacto" class="cta-button" style="display: inline-block; background: linear-gradient(135deg, #333, #555); color: white; padding: 1.2rem 3rem; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease; box-shadow: 0 5px 20px rgba(0,0,0,0.2);">Contactar para Asesoría</a>
             </div>
         </div>
     </section>
@@ -545,9 +304,9 @@
     <section id="servicios" class="services" style="padding: 2.5rem 0;">
         <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
             <div class="section-header" data-aos="fade-up" style="text-align: center; margin-bottom: 1.5rem;">
-                <span class="section-subtitle" style="display: block; color: #ff6b6b; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px;">Nuestro Servicio</span>
+                <span class="section-subtitle" style="display: block; color: #ff6b6b; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px;">Nuestros Servicios</span>
                 <h2 style="font-size: 1.8rem; margin: 0 0 1rem; color: #333;">Tratamientos Profesionales</h2>
-                <p class="section-description" style="max-width: 700px; margin: 0 auto 1.5rem; color: #666; font-size: 0.95rem; line-height: 1.5;">Tratamientos estéticos profesionales para realzar tu belleza natural con resultados excepcionales.</p>
+                <p class="section-description" style="max-width: 700px; margin: 0 auto 1.5rem; color: #666; font-size: 0.95rem; line-height: 1.5;">Tratamientos estÃ©ticos profesionales para realzar tu belleza natural con resultados excepcionales.</p>
             </div>
             
             <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.2rem; padding: 0.5rem 0;">
@@ -559,9 +318,14 @@
                     <h3 style="font-size: 1.1rem; margin: 0.5rem 0 0.3rem; color: #333;">Depilación Profesional</h3>
                     <p class="service-description" style="font-size: 0.8rem; color: #666; margin: 0.2rem 0 0.6rem; line-height: 1.4; flex-grow: 1;">Servicio de depilación con cera de alta calidad para una piel suave y sin vello. Técnicas profesionales para minimizar molestias y obtener resultados duraderos.</p>
                     <div class="service-features" style="margin: 0.5rem 0;">
-                        <p style="margin: 0.2rem 0; font-size: 0.8rem;"><i class="fas fa-check" style="margin-right: 0.3rem; color: #4CAF50; font-size: 0.7rem;"></i> Cera hipoalergénica</p>
-                        <p style="margin: 0.2rem 0; font-size: 0.8rem;"><i class="fas fa-check" style="margin-right: 0.3rem; color: #4CAF50; font-size: 0.7rem;"></i> Piel suave por más tiempo</p>
+                        <p style="margin: 0.2rem 0; font-size: 0.8rem;"><i class="fas fa-check" style="margin-right: 0.3rem; color: #4CAF50; font-size: 0.7rem;"></i> Cera hipoalergÃ©nica</p>
+                        <p style="margin: 0.2rem 0; font-size: 0.8rem;"><i class="fas fa-check" style="margin-right: 0.3rem; color: #4CAF50; font-size: 0.7rem;"></i> Piel suave por mÃ¡s tiempo</p>
                         <p style="margin: 0.2rem 0; font-size: 0.8rem;"><i class="fas fa-check" style="margin-right: 0.3rem; color: #4CAF50; font-size: 0.7rem;"></i> Resultados duraderos</p>
+                    </div>
+                    <div class="service-price" style="margin: 0.5rem 0 0.8rem; padding-top: 0.5rem; border-top: 1px dashed #eee;">
+                        <span>Desde</span>
+                        <span class="price">$10.000</span>
+                        <span class="price-note">por zona</span>
                     </div>
                     <a href="#contacto" class="btn-service" style="display: inline-block; width: 100%; text-align: center; padding: 0.5rem; background: #ff6b6b; color: white; text-decoration: none; border-radius: 4px; margin-top: auto; font-size: 0.85rem; transition: all 0.2s ease; font-weight: 500;" onmouseover="this.style.background='#ff5252'" onmouseout="this.style.background='#ff6b6b'">
                         <i class="fas fa-calendar-alt" style="margin-right: 5px;"></i> Reservar Cita
@@ -575,12 +339,17 @@
                             <i class="fas fa-arrow-up" style="position: absolute; font-size: 0.6em; bottom: -5px; right: -5px; color: #ff6b6b; background: white; border-radius: 50%; padding: 2px; border: 1px solid #ff6b6b;"></i>
                         </i>
                     </div>
-                    <h3 style="font-size: 1.1rem; margin: 0.5rem 0 0.3rem; color: #333;">Lifting de Pestañas</h3>
-                    <p class="service-description" style="font-size: 0.8rem; color: #666; margin: 0.2rem 0 0.6rem; line-height: 1.4; flex-grow: 1;">Realza la mirada con un efecto de pestañas más largas y curvadas sin necesidad de extensiones. Resultado natural que dura entre 6-8 semanas.</p>
+                    <h3 style="font-size: 1.1rem; margin: 0.5rem 0 0.3rem; color: #333;">Lifting de PestaÃ±as</h3>
+                    <p class="service-description" style="font-size: 0.8rem; color: #666; margin: 0.2rem 0 0.6rem; line-height: 1.4; flex-grow: 1;">Realza la mirada con un efecto de pestaÃ±as mÃ¡s largas y curvadas sin necesidad de extensiones. Resultado natural que dura entre 6-8 semanas.</p>
                     <div class="service-features" style="margin: 0.5rem 0;">
                         <p style="margin: 0.2rem 0; font-size: 0.8rem;"><i class="fas fa-check" style="margin-right: 0.3rem; color: #4CAF50; font-size: 0.7rem;"></i> Dura 6-8 semanas</p>
                         <p style="margin: 0.2rem 0; font-size: 0.8rem;"><i class="fas fa-check" style="margin-right: 0.3rem; color: #4CAF50; font-size: 0.7rem;"></i> Efecto natural</p>
-                        <p style="margin: 0.2rem 0; font-size: 0.8rem;"><i class="fas fa-check" style="margin-right: 0.3rem; color: #4CAF50; font-size: 0.7rem;"></i> Sin dañar las pestañas</p>
+                        <p style="margin: 0.2rem 0; font-size: 0.8rem;"><i class="fas fa-check" style="margin-right: 0.3rem; color: #4CAF50; font-size: 0.7rem;"></i> Sin daÃ±ar las pestaÃ±as</p>
+                    </div>
+                    <div class="service-price" style="margin: 0.5rem 0 0.8rem; padding-top: 0.5rem; border-top: 1px dashed #eee;">
+                        <span>Precio</span>
+                        <span class="price">$30.000</span>
+                        <span class="price-note">por sesiÃ³n</span>
                     </div>
                     <a href="#contacto" class="btn-service" style="display: inline-block; width: 100%; text-align: center; padding: 0.5rem; background: #ff6b6b; color: white; text-decoration: none; border-radius: 4px; margin-top: auto; font-size: 0.85rem; transition: all 0.2s ease; font-weight: 500;" onmouseover="this.style.background='#ff5252'" onmouseout="this.style.background='#ff6b6b'"
                         <i class="fas fa-calendar-alt" style="margin-right: 5px;"></i> Reservar Cita
@@ -600,6 +369,11 @@
                         <p style="margin: 0.2rem 0; font-size: 0.8rem;"><i class="fas fa-check" style="margin-right: 0.3rem; color: #4CAF50; font-size: 0.7rem;"></i> Cejas perfectas</p>
                         <p style="margin: 0.2rem 0; font-size: 0.8rem;"><i class="fas fa-check" style="margin-right: 0.3rem; color: #4CAF50; font-size: 0.7rem;"></i> Bajo mantenimiento</p>
                     </div>
+                    <div class="service-price" style="margin: 0.5rem 0 0.8rem; padding-top: 0.5rem; border-top: 1px dashed #eee;">
+                        <span>Precio</span>
+                        <span class="price">$28.000</span>
+                        <span class="price-note">por sesiÃ³n</span>
+                    </div>
                     <a href="#contacto" class="btn-service" style="display: inline-block; width: 100%; text-align: center; padding: 0.5rem; background: #ff6b6b; color: white; text-decoration: none; border-radius: 4px; margin-top: auto; font-size: 0.85rem; transition: all 0.2s ease; font-weight: 500;" onmouseover="this.style.background='#ff5252'" onmouseout="this.style.background='#ff6b6b'"
                         <i class="fas fa-calendar-alt" style="margin-right: 5px;"></i> Reservar Cita
                     </a>
@@ -611,12 +385,17 @@
                         <i class="fas fa-spa"></i>
                     </div>
                     <h3 style="font-size: 1.1rem; margin: 0.5rem 0 0.3rem; color: #333;">Tratamiento Facial</h3>
-                    <p class="service-description" style="font-size: 0.8rem; color: #666; margin: 0.2rem 0 0.6rem; line-height: 1.4; flex-grow: 1;">Limpieza profunda, hidratación y tratamiento personalizado según las necesidades de tu piel. Incluye limpieza, exfoliación, extracción, mascarilla y masaje.</p>
+                    <p class="service-description" style="font-size: 0.8rem; color: #666; margin: 0.2rem 0 0.6rem; line-height: 1.4; flex-grow: 1;">Limpieza profunda, hidrataciÃ³n y tratamiento personalizado segÃºn las necesidades de tu piel. Incluye limpieza, exfoliaciÃ³n, extracciÃ³n, mascarilla y masaje.</p>
                     <div class="service-features" style="margin: 0.5rem 0;">
                         <p style="margin: 0.2rem 0; font-size: 0.8rem;"><i class="fas fa-check" style="margin-right: 0.3rem; color: #4CAF50; font-size: 0.7rem;"></i> 60 minutos</p>
                         <p style="margin: 0.2rem 0; font-size: 0.8rem;"><i class="fas fa-check" style="margin-right: 0.3rem; color: #4CAF50; font-size: 0.7rem;"></i> Productos premium</p>
                         <p style="margin: 0.2rem 0; font-size: 0.8rem;"><i class="fas fa-check" style="margin-right: 0.3rem; color: #4CAF50; font-size: 0.7rem;"></i> Para todo tipo de piel</p>
                         <p style="margin: 0.2rem 0; font-size: 0.8rem;"><i class="fas fa-check" style="margin-right: 0.3rem; color: #4CAF50; font-size: 0.7rem;"></i> Resultados inmediatos</p>
+                    </div>
+                    <div class="service-price" style="margin: 0.5rem 0 0.8rem; padding-top: 0.5rem; border-top: 1px dashed #eee;">
+                        <span>Precio</span>
+                        <span class="price">$35.000</span>
+                        <span class="price-note">por sesiÃ³n</span>
                     </div>
                     <a href="#contacto" class="btn-service" style="display: inline-block; width: 100%; text-align: center; padding: 0.5rem; background: #ff6b6b; color: white; text-decoration: none; border-radius: 4px; margin-top: auto; font-size: 0.85rem; transition: all 0.2s ease; font-weight: 500;" onmouseover="this.style.background='#ff5252'" onmouseout="this.style.background='#ff6b6b'"
                         <i class="fas fa-calendar-alt" style="margin-right: 5px;"></i> Reservar Cita
@@ -626,19 +405,24 @@
                 
             </div>
             
-            <!-- Fila central con un solo servicio: Diseño de Cejas -->
+            <!-- Fila central con un solo servicio: DiseÃ±o de Cejas -->
             <div class="services-grid" style="display: flex; justify-content: center; margin-top: 1.2rem;">
-                <!-- Servicio 1 - Diseño de Cejas -->
+                <!-- Servicio 1 - DiseÃ±o de Cejas -->
                 <div class="service-card" style="background: white; border-radius: 8px; padding: 0.9rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); height: 100%; display: flex; flex-direction: column; transition: all 0.3s ease; max-width: 300px; margin: 0 auto;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.05)'" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="300">
                     <div class="service-icon">
                         <i class="fas fa-eye"></i>
                     </div>
-                    <h3 style="font-size: 1.1rem; margin: 0.5rem 0 0.3rem; color: #333;">Diseño de Cejas</h3>
+                    <h3 style="font-size: 1.1rem; margin: 0.5rem 0 0.3rem; color: #333;">DiseÃ±o de Cejas</h3>
                     <p class="service-description" style="font-size: 0.8rem; color: #666; margin: 0.2rem 0 0.6rem; line-height: 1.4; flex-grow: 1;">Perfilado profesional de cejas que realza tu mirada según la estructura de tu rostro. Incluye diseño, depilación con cera y pinza, y tinte opcional.</p>
                     <div class="service-features" style="margin: 0.5rem 0;">
-                        <p style="margin: 0.2rem 0; font-size: 0.8rem;"><i class="fas fa-check" style="margin-right: 0.3rem; color: #4CAF50; font-size: 0.7rem;"></i> Diseño personalizado</p>
+                        <p style="margin: 0.2rem 0; font-size: 0.8rem;"><i class="fas fa-check" style="margin-right: 0.3rem; color: #4CAF50; font-size: 0.7rem;"></i> DiseÃ±o personalizado</p>
                         <p style="margin: 0.2rem 0; font-size: 0.8rem;"><i class="fas fa-check" style="margin-right: 0.3rem; color: #4CAF50; font-size: 0.7rem;"></i> Tinte opcional</p>
-                        <p style="margin: 0.2rem 0; font-size: 0.8rem;"><i class="fas fa-check" style="margin-right: 0.3rem; color: #4CAF50; font-size: 0.7rem;"></i> Duración 30 min</p>
+                        <p style="margin: 0.2rem 0; font-size: 0.8rem;"><i class="fas fa-check" style="margin-right: 0.3rem; color: #4CAF50; font-size: 0.7rem;"></i> DuraciÃ³n 30 min</p>
+                    </div>
+                    <div class="service-price" style="margin: 0.5rem 0 0.8rem; padding-top: 0.5rem; border-top: 1px dashed #eee;">
+                        <span>Desde</span>
+                        <span class="price">$15.000</span>
+                        <span class="price-note">sesiÃ³n</span>
                     </div>
                     <a href="#contacto" class="btn-service" style="display: inline-block; width: 100%; text-align: center; padding: 0.5rem; background: #ff6b6b; color: white; text-decoration: none; border-radius: 4px; margin-top: auto; font-size: 0.85rem; transition: all 0.2s ease; font-weight: 500;" onmouseover="this.style.background='#ff5252'" onmouseout="this.style.background='#ff6b6b'">
                         <i class="fas fa-calendar-alt" style="margin-right: 5px;"></i> Reservar Cita
@@ -657,7 +441,7 @@
                 <span class="section-subtitle">Testimonios Reales</span>
                 <h2>Lo que dicen nuestros clientes</h2>
                 <p class="section-description">En Soft Little Depilación, el 98% de nuestros clientes recomiendan nuestros servicios. 
-                Nuestro compromiso es ofrecer tratamientos personalizados con los más altos estándares de calidad.</p>
+                Nuestro compromiso es ofrecer tratamientos personalizados con los mÃ¡s altos estÃ¡ndares de calidad.</p>
             </div>
             
             <div class="testimonials-grid">
@@ -675,7 +459,7 @@
                             <i class="fas fa-star"></i>
                         </div>
                     </div>
-                    <p class="testimonial-text">"Excelente servicio, muy profesional y el resultado superÃ³ mis expectativas. La atención es personalizada y el trato es excelente."</p>
+                    <p class="testimonial-text">"Excelente servicio, muy profesional y el resultado superÃ³ mis expectativas. La atenciÃ³n es personalizada y el trato es excelente."</p>
                     <div class="testimonial-footer">
                         <span class="testimonial-name">MarÃ­a GonzÃ¡lez</span>
                         <span class="testimonial-category">Cliente frecuente</span>
@@ -696,7 +480,7 @@
                             <i class="fas fa-star"></i>
                         </div>
                     </div>
-                    <p class="testimonial-text">"Me encanta como me dejan la piel despuÃ©s de cada sesión. El trato es excelente, el ambiente muy agradable y los resultados son increÃ­bles."</p>
+                    <p class="testimonial-text">"Me encanta como me dejan la piel despuÃ©s de cada sesiÃ³n. El trato es excelente, el ambiente muy agradable y los resultados son increÃ­bles."</p>
                     <div class="testimonial-footer">
                         <span class="testimonial-name">Carolina MartÃ­nez</span>
                         <span class="testimonial-category">Cliente desde 2022</span>
@@ -717,7 +501,7 @@
                             <i class="fas fa-star"></i>
                         </div>
                     </div>
-                    <p class="testimonial-text">"IncreÃ­ble la diferencia que notÃ© desde la primera sesión. El personal es muy atento y profesional. Definitivamente ha sido una de las mejores decisiones."</p>
+                    <p class="testimonial-text">"IncreÃ­ble la diferencia que notÃ© desde la primera sesiÃ³n. El personal es muy atento y profesional. Definitivamente ha sido una de las mejores decisiones."</p>
                     <div class="testimonial-footer">
                         <span class="testimonial-name">Ana Torres</span>
                         <span class="testimonial-category">Cliente frecuente</span>
@@ -756,18 +540,18 @@
     <section id="contacto" class="contact-section">
         <div class="container">
             <div class="section-header text-center" data-aos="fade-up">
-                <span class="section-subtitle">Contáctame</span>
+                <span class="section-subtitle">ContÃ¡ctanos</span>
                 <h2 class="section-title">Agenda tu Cita Hoy</h2>
                 <p class="section-description mx-auto">
-                    Estamos aquí para responder todas tus preguntas y ayudarte a elegir el mejor tratamiento para ti.
+                    Estamos aquÃ­ para responder todas tus preguntas y ayudarte a elegir el mejor tratamiento para ti.
                 </p>
                 
-                <!-- Botón de WhatsApp destacado -->
+                <!-- BotÃ³n de WhatsApp destacado -->
                 <div class="whatsapp-cta">
-                    <a href="https://wa.me/56959727358?text=Hola%20estoy%20interesado%20en%20sus%20servicios" class="whatsapp-btn" target="_blank" style="background: #25D366 !important; color: white !important; text-decoration: none !important; padding: 12px 24px !important; border-radius: 25px !important; font-weight: 600 !important; display: inline-flex !important; align-items: center !important; gap: 8px !important; transition: all 0.3s ease !important; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3) !important;">
-                        <i class="fab fa-whatsapp" style="color: white !important; font-size: 18px !important;"></i> Contáctame por WhatsApp
+                    <a href="https://wa.me/541112345678?text=Hola%20estoy%20interesado%20en%20sus%20servicios" class="whatsapp-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i> ContÃ¡ctanos por WhatsApp
                     </a>
-                    <p class="whatsapp-number">+56 9 5972 7358</p>
+                    <p class="whatsapp-number">+54 11 1234-5678</p>
                 </div>
             </div>
             
@@ -775,48 +559,48 @@
                 <div class="contact-info">
                     <div class="contact-info-grid">
                         <div class="contact-info-item">
-                            <div class="contact-icon" style="background: #F6C8D5; color: #0F172A; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                                <i class="fas fa-map-marker-alt" style="color: white; font-size: 18px;"></i>
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
                             </div>
                             <div class="contact-text">
-                                <h4 class="info-title">Ubicación</h4>
-                                <p class="info-text">Jardines de la Frontera (Salida Norte de Temuco)</p>
+                                <h4 class="info-title">UbicaciÃ³n</h4>
+                                <p class="info-text">Av. Principal 1234, CABA, Argentina</p>
                             </div>
                         </div>
                         <div class="contact-info-item">
-                            <div class="contact-icon" style="background: #F6C8D5; color: #0F172A; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                                <i class="fas fa-phone-alt" style="color: white; font-size: 18px;"></i>
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
                             </div>
                             <div class="contact-text">
-                                <h4 class="info-title">Teléfono</h4>
-                                <p class="info-text">+56 9 5972 7358</p>
+                                <h4 class="info-title">TelÃ©fono</h4>
+                                <p class="info-text">+54 11 1234-5678</p>
                             </div>
                         </div>
                         <div class="contact-info-item">
-                            <div class="contact-icon" style="background: #F6C8D5; color: #0F172A; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                                <i class="fab fa-instagram" style="color: white; font-size: 18px;"></i>
+                            <div class="contact-icon">
+                                <i class="far fa-envelope"></i>
                             </div>
                             <div class="contact-text">
-                                <h4 class="info-title">Instagram</h4>
-                                <p class="info-text"><a href="https://www.instagram.com/soft_littledepilacion?igsh=eGh2ZW5pb21sMzRk&utm_source=qr" target="_blank" style="color: #666; text-decoration: none;">@soft_littledepilacion</a></p>
+                                <h4 class="info-title">Email</h4>
+                                <p class="info-text">info@softlittledepilación.com</p>
                             </div>
                         </div>
                         <div class="contact-info-item">
-                            <div class="contact-icon" style="background: #F6C8D5; color: #0F172A; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                                <i class="far fa-clock" style="color: white; font-size: 18px;"></i>
+                            <div class="contact-icon">
+                                <i class="far fa-clock"></i>
                             </div>
                             <div class="contact-text">
                                 <h4 class="info-title">Horario</h4>
-                                <p class="info-text">Lunes a Viernes: 8:00am - 19:00pm</p>
+                                <p class="info-text">Lun a Vie: 9:00 - 20:00<br>SÃ¡b: 9:00 - 14:00</p>
                             </div>
                         </div>
                     </div>
                     
                     <div class="social-contact">
-                        <h4>Síguenos en redes sociales</h4>
+                        <h4>SÃ­guenos en redes sociales</h4>
                         <div class="social-links">
-                            <a href="https://www.instagram.com/soft_littledepilacion?igsh=eGh2ZW5pb21sMzRk&utm_source=qr" class="social-link" aria-label="Instagram" target="_blank" style="background: linear-gradient(45deg, #833AB4, #FD1D1D, #F77737, #FCAF45) !important; color: white !important; width: 40px !important; height: 40px !important; border-radius: 50% !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; margin: 0 5px !important; text-decoration: none !important; transition: all 0.3s ease !important; box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;"><i class="fab fa-instagram" style="color: white !important; font-size: 16px !important;"></i></a>
-                            <a href="https://www.facebook.com/share/1AoFKwBrp7/?mibextid=wwXIfr" class="social-link" aria-label="Facebook" target="_blank" style="background: #1877F2 !important; color: white !important; width: 40px !important; height: 40px !important; border-radius: 50% !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; margin: 0 5px !important; text-decoration: none !important; transition: all 0.3s ease !important; box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;"><i class="fab fa-facebook-f" style="color: white !important; font-size: 16px !important;"></i></a>
+                            <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         </div>
                     </div>
                 </div>
@@ -834,16 +618,16 @@
                 </div>
                 <p class="footer-description" style="margin: 0 auto 1.5rem; line-height: 1.5; max-width: 300px;">Especialistas en depilación y belleza con resultados profesionales y atención personalizada.</p>
                 <div class="social-links" style="margin-bottom: 2rem;">
-                    <a href="https://www.facebook.com/share/1AoFKwBrp7/?mibextid=wwXIfr" target="_blank" class="social-link" style="background: #1877F2 !important; color: white !important; width: 40px !important; height: 40px !important; border-radius: 50% !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; margin: 0 5px !important; text-decoration: none !important; transition: all 0.3s ease !important; box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;"><i class="fab fa-facebook-f" style="color: white !important; font-size: 16px !important;"></i></a>
-                    <a href="https://www.instagram.com/soft_littledepilacion?igsh=eGh2ZW5pb21sMzRk&utm_source=qr" target="_blank" class="social-link" style="background: linear-gradient(45deg, #833AB4, #FD1D1D, #F77737, #FCAF45) !important; color: white !important; width: 40px !important; height: 40px !important; border-radius: 50% !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; margin: 0 5px !important; text-decoration: none !important; transition: all 0.3s ease !important; box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;"><i class="fab fa-instagram" style="color: white !important; font-size: 16px !important;"></i></a>
-                    <a href="https://wa.me/56959727358" target="_blank" class="social-link" style="background: #25D366 !important; color: white !important; width: 40px !important; height: 40px !important; border-radius: 50% !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; margin: 0 5px !important; text-decoration: none !important; transition: all 0.3s ease !important; box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;"><i class="fab fa-whatsapp" style="color: white !important; font-size: 16px !important;"></i></a>
+                    <a href="#" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/569XXXXXXXX" target="_blank" class="social-link"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
             <div class="footer-col footer-col3" style="width: 100%; max-width: 300px; margin: 0 auto 2rem;">
                 <h4 style="color: #F6C8D5; margin-bottom: 1.5rem;">Contacto</h4>
-                <p style="margin: 0.5rem 0;"><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i>Jardines de la Frontera (Salida Norte de Temuco)</p>
-                <p style="margin: 0.5rem 0;"><i class="fas fa-phone-alt" style="margin-right: 10px;"></i>+56 9 5972 7358</p>
-                <p style="margin: 0.5rem 0 1.5rem;"><i class="fab fa-instagram" style="margin-right: 10px;"></i><a href="https://www.instagram.com/soft_littledepilacion?igsh=eGh2ZW5pb21sMzRk&utm_source=qr" target="_blank" style="color: rgba(255,255,255,0.9); text-decoration: none;">@soft_littledepilacion</a></p>
+                <p style="margin: 0.5rem 0;"><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i>Rudecindo Ortega, Providencia</p>
+                <p style="margin: 0.5rem 0;"><i class="fas fa-phone-alt" style="margin-right: 10px;"></i>+56 9 XXXX XXXX</p>
+                <p style="margin: 0.5rem 0 1.5rem;"><i class="far fa-envelope" style="margin-right: 10px;"></i>contacto@softlittledepilación.cl</p>
             </div>
             <div style="width: 100%; padding-top: 1.5rem; margin-top: 1rem;">
                 <p class="copyright" style="margin: 0; font-size: 0.9rem; color: rgba(255,255,255,0.7);">&copy; 2025 Soft Little Depilación. Todos los derechos reservados.</p>
@@ -851,17 +635,9 @@
         </div>
     </footer>
 
-    <!-- Modal for Images -->
-    <div id="imageModal" class="image-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); z-index: 9999; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.3s ease;">
-        <div class="modal-content" style="position: relative; max-width: 90%; max-height: 90%; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.3); transform: scale(0.8); transition: transform 0.3s ease;">
-            <span class="modal-close" onclick="closeModal()" style="position: absolute; top: 15px; right: 20px; font-size: 30px; color: white; background: rgba(0,0,0,0.5); border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10000; transition: background 0.3s ease;">&times;</span>
-            <img id="modalImage" src="" alt="Imagen ampliada" style="width: 100%; height: 100%; object-fit: contain; display: block;">
-        </div>
-    </div>
-
-    <!-- Botón de WhatsApp flotante -->
-    <a href="https://wa.me/56959727358" class="whatsapp-float" target="_blank" style="background: #25D366 !important; color: white !important; width: 60px !important; height: 60px !important; border-radius: 50% !important; display: flex !important; align-items: center !important; justify-content: center !important; position: fixed !important; bottom: 30px !important; right: 30px !important; z-index: 1000 !important; text-decoration: none !important; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4) !important; transition: all 0.3s ease !important;">
-        <i class="fab fa-whatsapp" style="color: white !important; font-size: 24px !important;"></i>
+    <!-- BotÃ³n de WhatsApp flotante -->
+    <a href="https://wa.me/569XXXXXXXX" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
     </a>
 
 
@@ -891,53 +667,8 @@
     <script src="js/contact-slider.js"></script>
     
     <script>
-        // Modal functions
-        function openModal(imageSrc) {
-            const modal = document.getElementById('imageModal');
-            const modalImage = document.getElementById('modalImage');
-            
-            modalImage.src = imageSrc;
-            modal.style.display = 'flex';
-            
-            // Trigger animations
-            setTimeout(() => {
-                modal.style.opacity = '1';
-                modal.querySelector('.modal-content').style.transform = 'scale(1)';
-            }, 10);
-            
-            // Prevent body scroll
-            document.body.style.overflow = 'hidden';
-        }
-        
-        function closeModal() {
-            const modal = document.getElementById('imageModal');
-            
-            // Reverse animations
-            modal.style.opacity = '0';
-            modal.querySelector('.modal-content').style.transform = 'scale(0.8)';
-            
-            setTimeout(() => {
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }, 300);
-        }
-        
-        // Close modal when clicking outside
-        document.getElementById('imageModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeModal();
-            }
-        });
-        
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeModal();
-            }
-        });
-
         $(document).ready(function() {
-            // Inicializar AOS si la función existe
+            // Inicializar AOS si la funciÃ³n existe
             if (typeof AOS !== 'undefined') {
                 AOS.init({
                     duration: 1000,
@@ -947,12 +678,12 @@
                 });
             }
             
-            // Inicializar navegación suave si la función existe
+            // Inicializar navegaciÃ³n suave si la funciÃ³n existe
             if (typeof initSmoothScroll === 'function') {
                 initSmoothScroll();
             }
             
-            // Inicializar componentes si la función existe
+            // Inicializar componentes si la funciÃ³n existe
             if (typeof initComponents === 'function') {
                 initComponents();
             }
@@ -961,9 +692,6 @@
     <script src="js/modal.js"></script>
 </body>
 </html>
-
-
-
 
 
 
